@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0174B430B4D67EF04D365A25 /* Pods_DesafioM2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B668F6C7121E2C017E042B0A /* Pods_DesafioM2.framework */; };
 		D35B77B227B1C8A300EB213B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35B77B127B1C8A300EB213B /* AppDelegate.swift */; };
 		D35B77B427B1C8A300EB213B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35B77B327B1C8A300EB213B /* SceneDelegate.swift */; };
 		D35B77B627B1C8A300EB213B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35B77B527B1C8A300EB213B /* ViewController.swift */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		42BC0AD107CD75E3BFE4195D /* Pods-DesafioM2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioM2.release.xcconfig"; path = "Target Support Files/Pods-DesafioM2/Pods-DesafioM2.release.xcconfig"; sourceTree = "<group>"; };
+		70C774A0D49B8695BB1D98D3 /* Pods-DesafioM2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioM2.debug.xcconfig"; path = "Target Support Files/Pods-DesafioM2/Pods-DesafioM2.debug.xcconfig"; sourceTree = "<group>"; };
+		B668F6C7121E2C017E042B0A /* Pods_DesafioM2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DesafioM2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D35B77AE27B1C8A300EB213B /* DesafioM2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesafioM2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D35B77B127B1C8A300EB213B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D35B77B327B1C8A300EB213B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,17 +35,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0174B430B4D67EF04D365A25 /* Pods_DesafioM2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		230CEF8111F696586E24BB12 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				70C774A0D49B8695BB1D98D3 /* Pods-DesafioM2.debug.xcconfig */,
+				42BC0AD107CD75E3BFE4195D /* Pods-DesafioM2.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		3DEFA9E93A6A6BEF148FCDF2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B668F6C7121E2C017E042B0A /* Pods_DesafioM2.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D35B77A527B1C8A300EB213B = {
 			isa = PBXGroup;
 			children = (
 				D35B77B027B1C8A300EB213B /* DesafioM2 */,
 				D35B77AF27B1C8A300EB213B /* Products */,
+				230CEF8111F696586E24BB12 /* Pods */,
+				3DEFA9E93A6A6BEF148FCDF2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D35B77C227B1C8A400EB213B /* Build configuration list for PBXNativeTarget "DesafioM2" */;
 			buildPhases = (
+				880BDC479047E18A0A5BC238 /* [CP] Check Pods Manifest.lock */,
 				D35B77AA27B1C8A300EB213B /* Sources */,
 				D35B77AB27B1C8A300EB213B /* Frameworks */,
 				D35B77AC27B1C8A300EB213B /* Resources */,
+				54FAB1FE26FF7B748BB25066 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		54FAB1FE26FF7B748BB25066 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DesafioM2/Pods-DesafioM2-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DesafioM2/Pods-DesafioM2-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DesafioM2/Pods-DesafioM2-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		880BDC479047E18A0A5BC238 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DesafioM2-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D35B77AA27B1C8A300EB213B /* Sources */ = {
@@ -284,6 +353,7 @@
 		};
 		D35B77C327B1C8A400EB213B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70C774A0D49B8695BB1D98D3 /* Pods-DesafioM2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -312,6 +382,7 @@
 		};
 		D35B77C427B1C8A400EB213B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 42BC0AD107CD75E3BFE4195D /* Pods-DesafioM2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
