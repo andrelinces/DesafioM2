@@ -14,6 +14,8 @@
 		D35B77B927B1C8A300EB213B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D35B77B727B1C8A300EB213B /* Main.storyboard */; };
 		D35B77BB27B1C8A400EB213B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D35B77BA27B1C8A400EB213B /* Assets.xcassets */; };
 		D35B77BE27B1C8A400EB213B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D35B77BC27B1C8A400EB213B /* LaunchScreen.storyboard */; };
+		D35CBC3527B2C0BF003011FE /* GlobalProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35CBC3427B2C0BF003011FE /* GlobalProtocol.swift */; };
+		D35CBC3727B2C0E1003011FE /* GlobalMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35CBC3627B2C0E1003011FE /* GlobalMethods.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		D35B77BA27B1C8A400EB213B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D35B77BD27B1C8A400EB213B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D35B77BF27B1C8A400EB213B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D35CBC3427B2C0BF003011FE /* GlobalProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalProtocol.swift; sourceTree = "<group>"; };
+		D35CBC3627B2C0E1003011FE /* GlobalMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalMethods.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +52,6 @@
 				70C774A0D49B8695BB1D98D3 /* Pods-DesafioM2.debug.xcconfig */,
 				42BC0AD107CD75E3BFE4195D /* Pods-DesafioM2.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -81,6 +84,7 @@
 		D35B77B027B1C8A300EB213B /* DesafioM2 */ = {
 			isa = PBXGroup;
 			children = (
+				D35CBC2E27B2BFD6003011FE /* GlobalHelpers */,
 				D35B77B127B1C8A300EB213B /* AppDelegate.swift */,
 				D35B77B327B1C8A300EB213B /* SceneDelegate.swift */,
 				D35B77B527B1C8A300EB213B /* ViewController.swift */,
@@ -90,6 +94,39 @@
 				D35B77BF27B1C8A400EB213B /* Info.plist */,
 			);
 			path = DesafioM2;
+			sourceTree = "<group>";
+		};
+		D35CBC2E27B2BFD6003011FE /* GlobalHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				D35CBC3227B2C056003011FE /* GlobalProtocol */,
+				D35CBC3127B2C032003011FE /* GlobalMethods */,
+				D35CBC2F27B2BFF5003011FE /* GlobalExtension */,
+			);
+			path = GlobalHelpers;
+			sourceTree = "<group>";
+		};
+		D35CBC2F27B2BFF5003011FE /* GlobalExtension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GlobalExtension;
+			sourceTree = "<group>";
+		};
+		D35CBC3127B2C032003011FE /* GlobalMethods */ = {
+			isa = PBXGroup;
+			children = (
+				D35CBC3627B2C0E1003011FE /* GlobalMethods.swift */,
+			);
+			path = GlobalMethods;
+			sourceTree = "<group>";
+		};
+		D35CBC3227B2C056003011FE /* GlobalProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				D35CBC3427B2C0BF003011FE /* GlobalProtocol.swift */,
+			);
+			path = GlobalProtocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,6 +246,8 @@
 			files = (
 				D35B77B627B1C8A300EB213B /* ViewController.swift in Sources */,
 				D35B77B227B1C8A300EB213B /* AppDelegate.swift in Sources */,
+				D35CBC3527B2C0BF003011FE /* GlobalProtocol.swift in Sources */,
+				D35CBC3727B2C0E1003011FE /* GlobalMethods.swift in Sources */,
 				D35B77B427B1C8A300EB213B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
