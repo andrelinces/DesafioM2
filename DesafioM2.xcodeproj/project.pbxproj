@@ -16,6 +16,10 @@
 		D35B77BE27B1C8A400EB213B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D35B77BC27B1C8A400EB213B /* LaunchScreen.storyboard */; };
 		D35CBC3527B2C0BF003011FE /* GlobalProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35CBC3427B2C0BF003011FE /* GlobalProtocol.swift */; };
 		D35CBC3727B2C0E1003011FE /* GlobalMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35CBC3627B2C0E1003011FE /* GlobalMethods.swift */; };
+		D35CBC3E27B30DF5003011FE /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35CBC3D27B30DF5003011FE /* MovieDetailViewController.swift */; };
+		D35CBC4027B30F95003011FE /* CardDetailsModelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D35CBC3F27B30F95003011FE /* CardDetailsModelCell.xib */; };
+		D35CBC4227B30FA1003011FE /* CardDetailsModelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35CBC4127B30FA1003011FE /* CardDetailsModelCell.swift */; };
+		D35CBC4427B31004003011FE /* ModelCardDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35CBC4327B31004003011FE /* ModelCardDetails.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +36,10 @@
 		D35B77BF27B1C8A400EB213B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D35CBC3427B2C0BF003011FE /* GlobalProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalProtocol.swift; sourceTree = "<group>"; };
 		D35CBC3627B2C0E1003011FE /* GlobalMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalMethods.swift; sourceTree = "<group>"; };
+		D35CBC3D27B30DF5003011FE /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
+		D35CBC3F27B30F95003011FE /* CardDetailsModelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardDetailsModelCell.xib; sourceTree = "<group>"; };
+		D35CBC4127B30FA1003011FE /* CardDetailsModelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsModelCell.swift; sourceTree = "<group>"; };
+		D35CBC4327B31004003011FE /* ModelCardDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelCardDetails.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				D35CBC2E27B2BFD6003011FE /* GlobalHelpers */,
+				D35CBC3827B2C311003011FE /* Sections */,
 				D35B77B127B1C8A300EB213B /* AppDelegate.swift */,
 				D35B77B327B1C8A300EB213B /* SceneDelegate.swift */,
 				D35B77B527B1C8A300EB213B /* ViewController.swift */,
@@ -127,6 +136,49 @@
 				D35CBC3427B2C0BF003011FE /* GlobalProtocol.swift */,
 			);
 			path = GlobalProtocol;
+			sourceTree = "<group>";
+		};
+		D35CBC3827B2C311003011FE /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				D35CBC3927B2C3BD003011FE /* Main */,
+			);
+			path = Sections;
+			sourceTree = "<group>";
+		};
+		D35CBC3927B2C3BD003011FE /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				D35CBC3A27B2C836003011FE /* MovieDetailsViewController */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		D35CBC3A27B2C836003011FE /* MovieDetailsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D35CBC3B27B2C8BA003011FE /* ModelTableView */,
+				D35CBC3C27B2C946003011FE /* ModelCell */,
+			);
+			path = MovieDetailsViewController;
+			sourceTree = "<group>";
+		};
+		D35CBC3B27B2C8BA003011FE /* ModelTableView */ = {
+			isa = PBXGroup;
+			children = (
+				D35CBC3D27B30DF5003011FE /* MovieDetailViewController.swift */,
+			);
+			path = ModelTableView;
+			sourceTree = "<group>";
+		};
+		D35CBC3C27B2C946003011FE /* ModelCell */ = {
+			isa = PBXGroup;
+			children = (
+				D35CBC3F27B30F95003011FE /* CardDetailsModelCell.xib */,
+				D35CBC4127B30FA1003011FE /* CardDetailsModelCell.swift */,
+				D35CBC4327B31004003011FE /* ModelCardDetails.swift */,
+			);
+			path = ModelCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,6 +243,7 @@
 			files = (
 				D35B77BE27B1C8A400EB213B /* LaunchScreen.storyboard in Resources */,
 				D35B77BB27B1C8A400EB213B /* Assets.xcassets in Resources */,
+				D35CBC4027B30F95003011FE /* CardDetailsModelCell.xib in Resources */,
 				D35B77B927B1C8A300EB213B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -246,8 +299,11 @@
 			files = (
 				D35B77B627B1C8A300EB213B /* ViewController.swift in Sources */,
 				D35B77B227B1C8A300EB213B /* AppDelegate.swift in Sources */,
+				D35CBC4427B31004003011FE /* ModelCardDetails.swift in Sources */,
+				D35CBC4227B30FA1003011FE /* CardDetailsModelCell.swift in Sources */,
 				D35CBC3527B2C0BF003011FE /* GlobalProtocol.swift in Sources */,
 				D35CBC3727B2C0E1003011FE /* GlobalMethods.swift in Sources */,
+				D35CBC3E27B30DF5003011FE /* MovieDetailViewController.swift in Sources */,
 				D35B77B427B1C8A300EB213B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
