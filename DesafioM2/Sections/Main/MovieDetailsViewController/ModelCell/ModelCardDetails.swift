@@ -8,11 +8,11 @@
 import UIKit
 
 protocol ModelCardDetailsCallBack: class {
-    //func acaoBotaoRetornar()
+    func actionClickCardView (indexPath: IndexPath)
 }
 
 class ModelCardDetails: tableViewCompatible {
-    internal init(delegate: ModelCardDetailsCallBack,  movieDetails: String) {
+    internal init(delegate: ModelCardDetailsCallBack?,  movieDetails: String) {
         self.delegate = delegate
         self.movieDetails = movieDetails
     }
@@ -28,39 +28,46 @@ class ModelCardDetails: tableViewCompatible {
     var movieDetails: String
     
     func cellForTableView(tableView: UITableView, atIndexpath indexpath: IndexPath) -> UITableViewCell {
-        
-        if let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexpath) as? ModelCardDetails {
-            
+
+        if let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexpath) as? CardDetailsModelCell{
+
             //Inicializando a célula (design, values etc...) atributos declarados na 'modelCell
             //       cell.setupDesign()
+            cell.setupDesign()
             
+            cell.setupValues(movieDetails: movieDetails)
+            
+            //test cell tableView
+            //cell.textLabel?.text = "test cell tableView"
+            
+            //Adding clicks in card1view...
+            let gestureCliqueCard = myTapCustom(target: self, action: #selector(actionClickCardView))
+            gestureCliqueCard.indexPath = indexpath
+            
+            cell.cardViewMovieDetails.addGestureRecognizer(gestureCliqueCard)
+            
+            return cell
+
         }else{
-        
-        return UITableViewCell()
-        
+
+            return UITableViewCell()
+            
         }
-        
     }
+    
+    @objc func actionClickCardView (sender: myTapCustom) {
+
+        delegate?.actionClickCardView(indexPath: sender.indexPath!)
+        print("test label card1model: \(sender.indexPath!)")
+    }
+    
+    class myTapCustom: UITapGestureRecognizer {
+
+        var indexPath: IndexPath?
+
+    }
+    
 }
-//Montando a célula modelo
-//func cellForTableView(tableView: UITableView, atIndexpath indexPath: IndexPath) -> UITableViewCell {
-//
-//    if let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? Card1ModelCell {
-//
-//        //Inicializando a célula (design, values etc...) atributos declarados na 'modelCell
-//        cell.setupDesign()
-//
-//        cell.setupValues(tituloCard: tituloCard)
-//
-//        //Adicionando cliques no cardView
-//        cell.cardView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(acaoCliqueCardView)))
-//
-//        return cell
-//
-//    }else{
-//
-//    return UITableViewCell()
-//
-//    }
-//
-//}
+
+
+

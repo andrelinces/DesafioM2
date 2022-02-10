@@ -12,33 +12,17 @@ class DataSource: NSObject {
     var data = [Any] ()
     var navigationController: UINavigationController?
     
-    func initializeTableView(tableview: UITableView){
+    func initializeTableView(tableView: UITableView){
         
-        tableview.dataSource = self
-        tableview.delegate = self
+        tableView.dataSource = self
+        //tableView.delegate = self
         
         //Registing the cells
-        tableview.register(UINib(nibName: "ModelCardDetails", bundle: Bundle.main), forCellReuseIdentifier: "movieDetailsIdentifier")
-          
+        tableView.register(UINib(nibName: "CardDetailsModelCell", bundle: Bundle.main), forCellReuseIdentifier: "movieDetailsIdentifier")
     }
 }
 
-extension DataSource: UITableViewDataSource, UITableViewDelegate {
-    
-//funciton for scrollview when the user scroll the list, show navigation bar
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        print("Scroll contentOffset: \(scrollView.contentOffset.y)")
-//        if scrollView.contentOffset.y > 10 {
-//
-//            navigationController?.navigationBar.alpha = scrollView.contentOffset.y / 100
-//
-//        }else{
-//
-//            navigationController?.navigationBar.alpha = 0
-//
-//        }
-//    }
-    
+extension DataSource: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
@@ -58,3 +42,16 @@ extension DataSource: UITableViewDataSource, UITableViewDelegate {
     
 }
 
+//funciton for scrollview when the user scroll the list, show navigation bar
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        print("Scroll contentOffset: \(scrollView.contentOffset.y)")
+//        if scrollView.contentOffset.y > 10 {
+//
+//            navigationController?.navigationBar.alpha = scrollView.contentOffset.y / 100
+//
+//        }else{
+//
+//            navigationController?.navigationBar.alpha = 0
+//
+//        }
+//    }

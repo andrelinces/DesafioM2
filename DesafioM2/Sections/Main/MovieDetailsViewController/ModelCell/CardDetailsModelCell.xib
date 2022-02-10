@@ -12,17 +12,17 @@
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="movieDetailsIdentifier" rowHeight="216" id="7En-bw-mda" customClass="CardDetailsModelCell" customModule="DesafioM2" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="543" height="216"/>
             <autoresizingMask key="autoresizingMask"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7En-bw-mda" id="rbK-oe-B9h">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7En-bw-mda" id="rbK-oe-B9h">
                 <rect key="frame" x="0.0" y="0.0" width="543" height="216"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OzH-tI-SpM">
-                        <rect key="frame" x="0.0" y="0.0" width="543" height="216"/>
+                        <rect key="frame" x="0.0" y="0.0" width="543" height="200"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A8K-so-nfB">
-                                <rect key="frame" x="8" y="8" width="527" height="200"/>
+                                <rect key="frame" x="8" y="8" width="527" height="184"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MovieDetails" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VhW-bE-exE">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MovieDetails" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VhW-bE-exE">
                                         <rect key="frame" x="10" y="15" width="507" height="70"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="70" id="AJX-IG-CQI"/>
@@ -35,6 +35,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="VhW-bE-exE" firstAttribute="top" secondItem="A8K-so-nfB" secondAttribute="top" constant="15" id="FGN-HJ-D4a"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="KxV-Vs-4V4"/>
                                     <constraint firstAttribute="trailing" secondItem="VhW-bE-exE" secondAttribute="trailing" constant="10" id="Vzb-vm-kXl"/>
                                     <constraint firstItem="VhW-bE-exE" firstAttribute="leading" secondItem="A8K-so-nfB" secondAttribute="leading" constant="10" id="rVQ-Oj-Spa"/>
                                 </constraints>
@@ -42,6 +43,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstAttribute="height" constant="200" id="0BF-Q8-6OS"/>
                             <constraint firstAttribute="trailing" secondItem="A8K-so-nfB" secondAttribute="trailing" constant="8" id="7iN-gD-PC6"/>
                             <constraint firstItem="A8K-so-nfB" firstAttribute="top" secondItem="OzH-tI-SpM" secondAttribute="top" constant="8" id="MlT-dM-zbK"/>
                             <constraint firstItem="A8K-so-nfB" firstAttribute="leading" secondItem="OzH-tI-SpM" secondAttribute="leading" constant="8" id="VPH-eg-OHD"/>

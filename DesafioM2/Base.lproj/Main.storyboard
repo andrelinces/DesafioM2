@@ -3,14 +3,15 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Movie Detail View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="DesafioM2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="MovieDetailViewController" customModule="DesafioM2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,18 +22,30 @@
                                     <constraint firstAttribute="height" constant="400" id="Jn6-9l-isb"/>
                                 </constraints>
                             </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="uti-3K-1M4">
+                                <rect key="frame" x="0.0" y="400" width="414" height="462"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="2vR-Ns-xov"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="asM-01-88l" secondAttribute="trailing" id="UAA-dQ-TLv"/>
+                            <constraint firstItem="uti-3K-1M4" firstAttribute="bottom" secondItem="2vR-Ns-xov" secondAttribute="bottom" id="J0X-ZU-apf"/>
+                            <constraint firstItem="2vR-Ns-xov" firstAttribute="trailing" secondItem="asM-01-88l" secondAttribute="trailing" id="UAA-dQ-TLv"/>
                             <constraint firstItem="asM-01-88l" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="WoR-Sg-eQ0"/>
-                            <constraint firstItem="asM-01-88l" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="yfq-oY-2gB"/>
+                            <constraint firstItem="uti-3K-1M4" firstAttribute="top" secondItem="asM-01-88l" secondAttribute="bottom" id="g1b-if-ac2"/>
+                            <constraint firstItem="uti-3K-1M4" firstAttribute="leading" secondItem="2vR-Ns-xov" secondAttribute="leading" id="rTb-c7-kKY"/>
+                            <constraint firstItem="2vR-Ns-xov" firstAttribute="trailing" secondItem="uti-3K-1M4" secondAttribute="trailing" id="xfu-Ui-Pgt"/>
+                            <constraint firstItem="asM-01-88l" firstAttribute="leading" secondItem="2vR-Ns-xov" secondAttribute="leading" id="yfq-oY-2gB"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="uti-3K-1M4" id="5ba-2c-igh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="18.840579710144929" y="69.642857142857139"/>
+            <point key="canvasLocation" x="40.579710144927539" y="65.625"/>
         </scene>
     </scenes>
     <resources>
