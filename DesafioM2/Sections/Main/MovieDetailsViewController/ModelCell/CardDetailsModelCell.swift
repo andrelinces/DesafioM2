@@ -15,7 +15,7 @@ class CardDetailsModelCell: UITableViewCell {
     func setupDesign () {
 
         cardViewMovieDetails.changeDesigneView(cornerRadius: 28, shadow: CGSize(width: 0, height: 2) , shadowOpacity: 0.3)
-
+      
     }
 
     func setupValues (movieDetails: String) {

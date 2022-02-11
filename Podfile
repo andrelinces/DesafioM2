@@ -8,5 +8,7 @@ target 'DesafioM2' do
   # Pods for DesafioM2
 	
     pod 'Alamofire', '~> 5.4'
+
+    pod 'Kingfisher' 	
  
 end

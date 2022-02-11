@@ -41,7 +41,6 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="200" id="0BF-Q8-6OS"/>
                             <constraint firstAttribute="trailing" secondItem="A8K-so-nfB" secondAttribute="trailing" constant="8" id="7iN-gD-PC6"/>
@@ -58,6 +57,7 @@
                     <constraint firstItem="OzH-tI-SpM" firstAttribute="leading" secondItem="rbK-oe-B9h" secondAttribute="leading" id="vSY-JC-ogk"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="cardViewMovieDetails" destination="A8K-so-nfB" id="MCn-i7-J9I"/>
                 <outlet property="labelMovieDetails" destination="VhW-bE-exE" id="BON-Ky-3gH"/>

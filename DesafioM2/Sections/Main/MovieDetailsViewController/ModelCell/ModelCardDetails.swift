@@ -33,8 +33,9 @@ class ModelCardDetails: tableViewCompatible {
 
             //Inicializando a célula (design, values etc...) atributos declarados na 'modelCell
             //       cell.setupDesign()
-            cell.setupDesign()
+            //cell.setupDesign()
             
+            //cell.borderDesigneView(cornerRadius: 50)
             cell.setupValues(movieDetails: movieDetails)
             
             //test cell tableView
