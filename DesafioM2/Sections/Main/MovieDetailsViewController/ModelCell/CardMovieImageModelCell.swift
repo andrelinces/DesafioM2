@@ -20,9 +20,15 @@ class CardMovieImageModelCell: UITableViewCell {
 
     func setupValues (imageMovie: URL) {
 
+        print("numero de subview\(imageViewMovie.layer.sublayers?.count)")
+        
         imageViewMovie.downloaded(from: imageMovie)
         imageViewMovie.contentMode = .scaleAspectFill
-        imageViewMovie.addBlackGradientLayerInForeground(frame: imageViewMovie.bounds, colors:[.clear, .black])
+        
+        //Caso o gradiente nao tenha sido adicionado na layer
+        if imageViewMovie.layer.sublayers == nil {
+            imageViewMovie.addBlackGradientLayerInForeground(frame: imageViewMovie.bounds, colors:[.clear, .black])
+        }
     }
     
     

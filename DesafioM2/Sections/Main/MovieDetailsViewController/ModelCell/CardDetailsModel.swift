@@ -14,10 +14,12 @@ protocol CardDetailsModelCallBack: class {
 }
 
 class CardDetailsModel: tableViewCompatible {
-    internal init(delegate: CardDetailsModelCallBack?,  movieDetails: String, tagFilmeFavorito: Bool) {
+    internal init(delegate: CardDetailsModelCallBack?,  movieDetails: String, tagFilmeFavorito: Bool, likes: Int, popularity: Double) {
         self.delegate = delegate
         self.movieDetails = movieDetails
         self.tagFilmeFavorito = tagFilmeFavorito
+        self.likes = likes
+        self.popularity = popularity
         
     }
     
@@ -31,6 +33,8 @@ class CardDetailsModel: tableViewCompatible {
     //variáveis de inicialização
     var movieDetails: String
     var tagFilmeFavorito: Bool
+    var likes: Int
+    var popularity: Double
     
     func cellForTableView(tableView: UITableView, atIndexpath indexpath: IndexPath) -> UITableViewCell {
 
@@ -41,7 +45,7 @@ class CardDetailsModel: tableViewCompatible {
             //cell.setupDesign()
             
             //cell.borderDesigneView(cornerRadius: 50)
-            cell.setupValues(movieDetails: movieDetails)
+            cell.setupValues(movieDetails: movieDetails, likes: likes, popularity: popularity)
             cell.setupImage(tagFilmeFavorito: tagFilmeFavorito)
             
             //test cell tableView

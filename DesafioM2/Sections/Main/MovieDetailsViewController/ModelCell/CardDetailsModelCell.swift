@@ -12,7 +12,8 @@ class CardDetailsModelCell: UITableViewCell {
     @IBOutlet weak var cardViewMovieDetails: UIView!
     @IBOutlet weak var labelMovieDetails: UILabel!
     @IBOutlet weak var imageViewHeart: UIImageView!
-    
+    @IBOutlet weak var labellikes: UILabel!
+    @IBOutlet weak var labelPropularity: UILabel!
     
     func setupDesign () {
 
@@ -20,10 +21,11 @@ class CardDetailsModelCell: UITableViewCell {
       
     }
 
-    func setupValues (movieDetails: String ) {
+    func setupValues (movieDetails: String, likes: Int, popularity: Double ) {
 
         labelMovieDetails.text = movieDetails
-        
+        labellikes.text = String(likes) + " Likes"
+        labelPropularity.text = "Popularity " + String(popularity)
     }
     
     func setupImage (tagFilmeFavorito: Bool ) {

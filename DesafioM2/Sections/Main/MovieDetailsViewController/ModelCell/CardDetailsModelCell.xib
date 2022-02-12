@@ -30,16 +30,16 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The very Best of the Jhonny Deep" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VhW-bE-exE">
-                                        <rect key="frame" x="12" y="0.0" width="472" height="68.5"/>
-                                        <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="31"/>
+                                        <rect key="frame" x="12" y="0.0" width="472" height="74"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="31"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="7RF-wO-CJC">
-                                        <rect key="frame" x="4" y="89.5" width="250" height="20.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="-3" translatesAutoresizingMaskIntoConstraints="NO" id="7RF-wO-CJC">
+                                        <rect key="frame" x="4" y="90" width="250" height="20"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="748" image="heart" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Pgf-qv-Wte">
-                                                <rect key="frame" x="0.0" y="1.5" width="30" height="18"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="748" image="heart.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Pgf-qv-Wte">
+                                                <rect key="frame" x="0.0" y="1.5" width="30" height="17.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -47,13 +47,13 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Likes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U5G-np-xKR">
-                                                <rect key="frame" x="33" y="0.0" width="39.5" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="27" y="0.0" width="33.5" height="20"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="eye.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="WUf-Xi-eoj">
-                                                <rect key="frame" x="130.5" y="1.5" width="40" height="17"/>
+                                                <rect key="frame" x="156" y="1.5" width="40" height="16.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -61,8 +61,8 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Popularity" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0R6-uT-oF1">
-                                                <rect key="frame" x="173.5" y="0.0" width="76.5" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="193" y="0.0" width="57" height="20"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -113,13 +113,14 @@
                 <outlet property="cardViewMovieDetails" destination="A8K-so-nfB" id="MCn-i7-J9I"/>
                 <outlet property="imageViewHeart" destination="v0i-Z4-E3W" id="hdE-4y-zu4"/>
                 <outlet property="labelMovieDetails" destination="VhW-bE-exE" id="BON-Ky-3gH"/>
+                <outlet property="labelPropularity" destination="0R6-uT-oF1" id="DZR-v5-5C6"/>
+                <outlet property="labellikes" destination="U5G-np-xKR" id="cUZ-fl-ffL"/>
             </connections>
             <point key="canvasLocation" x="-436.23188405797106" y="-113.16964285714285"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="eye.fill" catalog="system" width="128" height="78"/>
-        <image name="heart" catalog="system" width="128" height="109"/>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
     </resources>
 </document>

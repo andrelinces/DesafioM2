@@ -58,7 +58,8 @@ class MovieDetailViewController: UIViewController, CardDetailsModelCallBack {
         print("Into function setupTable...")
         
         
-        dataSource = MovieDetailDataSource()
+//        dataSource = MovieDetailDataSource()
+        dataSource.data.removeAll()
         //let cellMovieDetails = ModelCardDetails(delegate: self, movieDetails: "teste um")
         //let cellMovieDetails2 = ModelCardDetails(delegate: self, movieDetails: "Teste Dois", imageHeart: "teste")
 
@@ -111,12 +112,18 @@ class MovieDetailViewController: UIViewController, CardDetailsModelCallBack {
             if let json = response.data {
                 
                 let originalTitle =  MovieDetailViewController.getModelApi(modelApi_list: json)
+                let voteCount = MovieDetailViewController.getModelApi(modelApi_list: json)
+                
+                let popularity = MovieDetailViewController.getModelApi(modelApi_list: json)
                 
                 let movieTitle = originalTitle.original_title
+                let likesMovie = voteCount.vote_count
+                let popularityMovie = popularity.popularity
+                
                 
                 //let imageHeart = UIImage.init(systemName: "heart" )
                 
-                let cellMovieTitle = CardDetailsModel(delegate: self, movieDetails: movieTitle, tagFilmeFavorito: self.tagFilmeFavorito)
+                let cellMovieTitle = CardDetailsModel(delegate: self, movieDetails: movieTitle, tagFilmeFavorito: self.tagFilmeFavorito, likes: likesMovie, popularity: popularityMovie)
                 
                 self.dataSource.data.append(cellMovieTitle)
                 self.dataSource.data.append(cellMovieTitle)
