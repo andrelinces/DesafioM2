@@ -20,6 +20,7 @@ class MovieDetailViewController: UIViewController, ModelCardDetailsCallBack {
     @IBOutlet weak var imageMovie: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("passou no didload....")
@@ -54,7 +55,9 @@ class MovieDetailViewController: UIViewController, ModelCardDetailsCallBack {
                 
                 let movieTitle = originalTitle.original_title
                 
-                let cellMovieTitle = ModelCardDetails(delegate: self, movieDetails: movieTitle)
+                //let imageHeart = UIImage.init(systemName: "heart" )
+                
+                let cellMovieTitle = ModelCardDetails(delegate: self, movieDetails: movieTitle, imageHeart: "heart")
                 
                 self.dataSource.data.append(cellMovieTitle)
                 
@@ -62,9 +65,10 @@ class MovieDetailViewController: UIViewController, ModelCardDetailsCallBack {
                 //var urlFull = URL(string: \(baseUrl) + movieDetailsApi.poster_path)
     
                 print("testUrlfull... \(originalTitle.original_title)")
-                   
+              
+                self.tableView.reloadData()
             }
-            
+            self.tableView.reloadData()
         }
         
         //recoverApi()
@@ -103,20 +107,17 @@ class MovieDetailViewController: UIViewController, ModelCardDetailsCallBack {
        return parsedData
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        self.imageMovie.image
-    }
     
     func setupTableView () {
         print("Into function setupTable...")
         
         //let cellMovieDetails = ModelCardDetails(delegate: self, movieDetails: "teste um")
-        let cellMovieDetails2 = ModelCardDetails(delegate: self, movieDetails: "Teste Dois")
+        //let cellMovieDetails2 = ModelCardDetails(delegate: self, movieDetails: "Teste Dois", imageHeart: "teste")
 
 
         //dataSource.data.append(cellMovieDetails)
 
-        dataSource.data.append(cellMovieDetails2)
+        //dataSource.data.append(cellMovieDetails2)
 
 
         dataSource.initializeTableView(tableView: tableView)

@@ -6,15 +6,18 @@
 //
 
 import UIKit
+import SwiftUI
 
 protocol ModelCardDetailsCallBack: class {
     func actionClickCardView (indexPath: IndexPath)
 }
 
 class ModelCardDetails: tableViewCompatible {
-    internal init(delegate: ModelCardDetailsCallBack?,  movieDetails: String) {
+    internal init(delegate: ModelCardDetailsCallBack?,  movieDetails: String, imageHeart: String) {
         self.delegate = delegate
         self.movieDetails = movieDetails
+        self.imageHeart = imageHeart
+        
     }
     
     open weak var delegate: ModelCardDetailsCallBack?
@@ -26,6 +29,7 @@ class ModelCardDetails: tableViewCompatible {
     
     //variáveis de inicialização
     var movieDetails: String
+    var imageHeart: String
     
     func cellForTableView(tableView: UITableView, atIndexpath indexpath: IndexPath) -> UITableViewCell {
 
@@ -37,6 +41,7 @@ class ModelCardDetails: tableViewCompatible {
             
             //cell.borderDesigneView(cornerRadius: 50)
             cell.setupValues(movieDetails: movieDetails)
+            cell.setupImage(imageHeart: imageHeart)
             
             //test cell tableView
             //cell.textLabel?.text = "test cell tableView"
