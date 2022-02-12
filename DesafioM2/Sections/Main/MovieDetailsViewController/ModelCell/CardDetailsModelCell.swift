@@ -26,10 +26,17 @@ class CardDetailsModelCell: UITableViewCell {
         
     }
     
-    func setupImage (imageHeart: String ) {
+    func setupImage (tagFilmeFavorito: Bool ) {
         
-        imageViewHeart.image = UIImage(named: imageHeart)
-        //imageHeart.image = UIImage.init(systemName: "heart")
+        //Verifica se o filme è favorito
+        if tagFilmeFavorito {
+            imageViewHeart.image = UIImage(systemName: "heart.fill")
+            imageViewHeart.tintColor = .red
+        }else {
+            imageViewHeart.image = UIImage(systemName: "heart")
+            imageViewHeart.tintColor = .lightGray
+        }
+        
         
     }
 }

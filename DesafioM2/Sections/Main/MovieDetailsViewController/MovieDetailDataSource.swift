@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DataSource: NSObject {
+class MovieDetailDataSource: NSObject {
     
     var data = [Any] ()
     var navigationController: UINavigationController?
@@ -18,18 +18,18 @@ class DataSource: NSObject {
         //tableView.delegate = self
         
         //Registing the cells
-        tableView.register(UINib(nibName: "CardDetailsModelCell", bundle: Bundle.main), forCellReuseIdentifier: "movieDetailsIdentifier")
+        tableView.register(UINib(nibName: "CardDetailsModelCell", bundle: Bundle.main), forCellReuseIdentifier: "CardDetailsModelCelldentifier")
     }
 }
 
-extension DataSource: UITableViewDataSource {
+extension MovieDetailDataSource: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if let modelCardDetails = data[indexPath.row] as? ModelCardDetails {
+        if let modelCardDetails = data[indexPath.row] as? CardDetailsModel {
             
             return modelCardDetails.cellForTableView(tableView: tableView, atIndexpath: indexPath)
             

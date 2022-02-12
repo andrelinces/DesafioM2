@@ -18,8 +18,8 @@
 		D35CBC3E27B30DF5003011FE /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35CBC3D27B30DF5003011FE /* MovieDetailViewController.swift */; };
 		D35CBC4027B30F95003011FE /* CardDetailsModelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D35CBC3F27B30F95003011FE /* CardDetailsModelCell.xib */; };
 		D35CBC4227B30FA1003011FE /* CardDetailsModelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35CBC4127B30FA1003011FE /* CardDetailsModelCell.swift */; };
-		D35CBC4427B31004003011FE /* ModelCardDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35CBC4327B31004003011FE /* ModelCardDetails.swift */; };
-		D35CBC4627B3237E003011FE /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35CBC4527B3237E003011FE /* DataSource.swift */; };
+		D35CBC4427B31004003011FE /* CardDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35CBC4327B31004003011FE /* CardDetailsModel.swift */; };
+		D35CBC4627B3237E003011FE /* MovieDetailDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35CBC4527B3237E003011FE /* MovieDetailDataSource.swift */; };
 		D35CBC4827B489F3003011FE /* GlobalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35CBC4727B489F3003011FE /* GlobalExtension.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,8 +39,8 @@
 		D35CBC3D27B30DF5003011FE /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		D35CBC3F27B30F95003011FE /* CardDetailsModelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardDetailsModelCell.xib; sourceTree = "<group>"; };
 		D35CBC4127B30FA1003011FE /* CardDetailsModelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsModelCell.swift; sourceTree = "<group>"; };
-		D35CBC4327B31004003011FE /* ModelCardDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelCardDetails.swift; sourceTree = "<group>"; };
-		D35CBC4527B3237E003011FE /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		D35CBC4327B31004003011FE /* CardDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsModel.swift; sourceTree = "<group>"; };
+		D35CBC4527B3237E003011FE /* MovieDetailDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailDataSource.swift; sourceTree = "<group>"; };
 		D35CBC4727B489F3003011FE /* GlobalExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -158,18 +158,11 @@
 		D35CBC3A27B2C836003011FE /* MovieDetailsViewController */ = {
 			isa = PBXGroup;
 			children = (
-				D35CBC3B27B2C8BA003011FE /* ModelTableView */,
 				D35CBC3C27B2C946003011FE /* ModelCell */,
+				D35CBC3D27B30DF5003011FE /* MovieDetailViewController.swift */,
+				D35CBC4527B3237E003011FE /* MovieDetailDataSource.swift */,
 			);
 			path = MovieDetailsViewController;
-			sourceTree = "<group>";
-		};
-		D35CBC3B27B2C8BA003011FE /* ModelTableView */ = {
-			isa = PBXGroup;
-			children = (
-				D35CBC3D27B30DF5003011FE /* MovieDetailViewController.swift */,
-			);
-			path = ModelTableView;
 			sourceTree = "<group>";
 		};
 		D35CBC3C27B2C946003011FE /* ModelCell */ = {
@@ -177,8 +170,7 @@
 			children = (
 				D35CBC3F27B30F95003011FE /* CardDetailsModelCell.xib */,
 				D35CBC4127B30FA1003011FE /* CardDetailsModelCell.swift */,
-				D35CBC4327B31004003011FE /* ModelCardDetails.swift */,
-				D35CBC4527B3237E003011FE /* DataSource.swift */,
+				D35CBC4327B31004003011FE /* CardDetailsModel.swift */,
 				D30B5C2727B5DB1400A1040E /* ModelApi.swift */,
 			);
 			path = ModelCell;
@@ -302,8 +294,8 @@
 			files = (
 				D30B5C2827B5DB1400A1040E /* ModelApi.swift in Sources */,
 				D35B77B227B1C8A300EB213B /* AppDelegate.swift in Sources */,
-				D35CBC4427B31004003011FE /* ModelCardDetails.swift in Sources */,
-				D35CBC4627B3237E003011FE /* DataSource.swift in Sources */,
+				D35CBC4427B31004003011FE /* CardDetailsModel.swift in Sources */,
+				D35CBC4627B3237E003011FE /* MovieDetailDataSource.swift in Sources */,
 				D35CBC4227B30FA1003011FE /* CardDetailsModelCell.swift in Sources */,
 				D35CBC3527B2C0BF003011FE /* GlobalProtocol.swift in Sources */,
 				D35CBC3E27B30DF5003011FE /* MovieDetailViewController.swift in Sources */,

@@ -8,28 +8,29 @@
 import UIKit
 import SwiftUI
 
-protocol ModelCardDetailsCallBack: class {
+protocol CardDetailsModelCallBack: class {
     func actionClickCardView (indexPath: IndexPath)
+    func actionClickFavoriteMovie(tagFilmeFavorite : Bool)
 }
 
-class ModelCardDetails: tableViewCompatible {
-    internal init(delegate: ModelCardDetailsCallBack?,  movieDetails: String, imageHeart: String) {
+class CardDetailsModel: tableViewCompatible {
+    internal init(delegate: CardDetailsModelCallBack?,  movieDetails: String, tagFilmeFavorito: Bool) {
         self.delegate = delegate
         self.movieDetails = movieDetails
-        self.imageHeart = imageHeart
+        self.tagFilmeFavorito = tagFilmeFavorito
         
     }
     
-    open weak var delegate: ModelCardDetailsCallBack?
+    open weak var delegate:CardDetailsModelCallBack?
     
     var reuseIdentifier: String {
         
-        return "movieDetailsIdentifier"
+        return "CardDetailsModelCelldentifier"
     }
     
     //variáveis de inicialização
     var movieDetails: String
-    var imageHeart: String
+    var tagFilmeFavorito: Bool
     
     func cellForTableView(tableView: UITableView, atIndexpath indexpath: IndexPath) -> UITableViewCell {
 
@@ -41,7 +42,7 @@ class ModelCardDetails: tableViewCompatible {
             
             //cell.borderDesigneView(cornerRadius: 50)
             cell.setupValues(movieDetails: movieDetails)
-            cell.setupImage(imageHeart: imageHeart)
+            cell.setupImage(tagFilmeFavorito: tagFilmeFavorito)
             
             //test cell tableView
             //cell.textLabel?.text = "test cell tableView"
@@ -51,6 +52,12 @@ class ModelCardDetails: tableViewCompatible {
             gestureCliqueCard.indexPath = indexpath
             
             cell.cardViewMovieDetails.addGestureRecognizer(gestureCliqueCard)
+            
+            let gestureCliqueFavoriteMovie = myTapCustomFavoriteMovie(target: self, action: #selector(actionClickFavoriteMovie))
+            gestureCliqueFavoriteMovie.tagFavoriteMovie = tagFilmeFavorito
+            
+            cell.imageViewHeart.addGestureRecognizer(gestureCliqueFavoriteMovie)
+            cell.imageViewHeart.isUserInteractionEnabled = true
             
             return cell
 
@@ -67,9 +74,20 @@ class ModelCardDetails: tableViewCompatible {
         print("test label card1model: \(sender.indexPath!)")
     }
     
+    @objc func actionClickFavoriteMovie(sender: myTapCustomFavoriteMovie) {
+
+        delegate?.actionClickFavoriteMovie(tagFilmeFavorite: sender.tagFavoriteMovie!)
+    }
+    
     class myTapCustom: UITapGestureRecognizer {
 
         var indexPath: IndexPath?
+
+    }
+    
+    class myTapCustomFavoriteMovie: UITapGestureRecognizer {
+
+        var tagFavoriteMovie: Bool?
 
     }
     

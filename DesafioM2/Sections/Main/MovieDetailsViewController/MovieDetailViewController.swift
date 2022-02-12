@@ -10,21 +10,77 @@ import Alamofire
 import Kingfisher
 import SwiftUI
 
-class MovieDetailViewController: UIViewController, ModelCardDetailsCallBack {
+class MovieDetailViewController: UIViewController, CardDetailsModelCallBack {
+    func actionClickFavoriteMovie(tagFilmeFavorite: Bool) {
+        
+        if tagFilmeFavorite {
+            self.tagFilmeFavorito = false
+        }else {
+            self.tagFilmeFavorito = true
+        }
+        
+        setupTableView()
+        self.tableView.reloadData()
+        
+    }
+    
     func actionClickCardView(indexPath: IndexPath) {
         
     }
     
-    let dataSource = DataSource()
+    var dataSource = MovieDetailDataSource()
   
     @IBOutlet weak var imageMovie: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     
     
+    var tagFilmeFavorito : Bool = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("passou no didload....")
+        
+        setupTableView()
     
+    }
+     
+    static func getModelApi(modelApi_list : Data) -> ModelApi {
+        
+        //Parsing the data
+        
+        let decoder = JSONDecoder()
+        let parsedData = try! decoder.decode(ModelApi.self, from: modelApi_list )
+        
+       return parsedData
+    }
+    
+    
+    func setupTableView () {
+        print("Into function setupTable...")
+        
+        
+        dataSource = MovieDetailDataSource()
+        //let cellMovieDetails = ModelCardDetails(delegate: self, movieDetails: "teste um")
+        //let cellMovieDetails2 = ModelCardDetails(delegate: self, movieDetails: "Teste Dois", imageHeart: "teste")
+
+
+        //dataSource.data.append(cellMovieDetails)
+
+        //dataSource.data.append(cellMovieDetails2)
+
+        recoverApi()
+
+        dataSource.initializeTableView(tableView: tableView)
+
+        tableView.allowsSelection = false
+
+        tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+        
+        tableView.reloadData()
+
+    }
+    
+    func recoverApi(){
         let baseUrl = URL(string: "https://image.tmdb.org/t/p/w400")
         //var urlFull = https://image.tmdb.org/t/p/w200/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg
         //Retrieves data JSON using alamofire api for to add objects.
@@ -33,7 +89,7 @@ class MovieDetailViewController: UIViewController, ModelCardDetailsCallBack {
                 
                 let movieDetailsApi =  MovieDetailViewController.getModelApi(modelApi_list: json)
                 
-                var urlFull = URL(string: "https://image.tmdb.org/t/p/w500" + movieDetailsApi.poster_path)
+                var urlFull = URL(string: "https://image.tmdb.org/t/p/w300" + movieDetailsApi.poster_path)
                 
                 //var urlFull = URL(string: \(baseUrl) + movieDetailsApi.poster_path)
     
@@ -57,7 +113,7 @@ class MovieDetailViewController: UIViewController, ModelCardDetailsCallBack {
                 
                 //let imageHeart = UIImage.init(systemName: "heart" )
                 
-                let cellMovieTitle = ModelCardDetails(delegate: self, movieDetails: movieTitle, imageHeart: "heart")
+                let cellMovieTitle = CardDetailsModel(delegate: self, movieDetails: movieTitle, tagFilmeFavorito: self.tagFilmeFavorito)
                 
                 self.dataSource.data.append(cellMovieTitle)
                 
@@ -70,62 +126,6 @@ class MovieDetailViewController: UIViewController, ModelCardDetailsCallBack {
             }
             self.tableView.reloadData()
         }
-        
-        //recoverApi()
-        setupTableView()
-        tableView.reloadData()
-    }
-    
-//    func recoverApi () {
-//
-//        //Retrieves data JSON using alamofire api for to add objects.
-//        AF.request("https://api.themoviedb.org/3/movie/550?api_key=8f04577aff690de3a89bef5e5f666fe5&append_to_response=poster_path").responseJSON { response in
-//            if let json = response.data {
-//
-//                let movieDetailsApi = MovieDetailViewController.getModelApi(modelApi_list: json)
-//     //https://image.tmdb.org/t/p/w200/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg
-//                var testImage = "https://image.tmdb.org/t/p/w200/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg"
-//                self.imageMovie.image = UIImage(named: testImage)
-//                //self.imageMovie.image = UIImage(named: movieDetailsApi.poster_path)
-//                print("test movieDetailsApi.. \(movieDetailsApi.poster_path)")
-//                //self.navigationJoke.title = (self.categorySelect)
-//
-//                self.reloadInputViews()
-//            }
-//
-//        }
-//
-//    }
-     
-    static func getModelApi(modelApi_list : Data) -> ModelApi {
-        
-        //Parsing the data
-        
-        let decoder = JSONDecoder()
-        let parsedData = try! decoder.decode(ModelApi.self, from: modelApi_list )
-        
-       return parsedData
-    }
-    
-    
-    func setupTableView () {
-        print("Into function setupTable...")
-        
-        //let cellMovieDetails = ModelCardDetails(delegate: self, movieDetails: "teste um")
-        //let cellMovieDetails2 = ModelCardDetails(delegate: self, movieDetails: "Teste Dois", imageHeart: "teste")
-
-
-        //dataSource.data.append(cellMovieDetails)
-
-        //dataSource.data.append(cellMovieDetails2)
-
-
-        dataSource.initializeTableView(tableView: tableView)
-
-        tableView.allowsSelection = false
-
-        tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
-
     }
 
 }
