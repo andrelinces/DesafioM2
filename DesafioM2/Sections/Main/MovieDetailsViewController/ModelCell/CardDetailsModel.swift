@@ -25,7 +25,7 @@ class CardDetailsModel: tableViewCompatible {
     
     var reuseIdentifier: String {
         
-        return "CardDetailsModelCelldentifier"
+        return "CardDetailsModelCellIdentifier"
     }
     
     //variáveis de inicialização

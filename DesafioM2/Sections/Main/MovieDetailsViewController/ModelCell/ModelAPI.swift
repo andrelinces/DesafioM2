@@ -9,15 +9,15 @@ import UIKit
 
 class ModelApi: Codable {
     
-    internal init(poster_path: String, original_title: String) {
+    internal init(poster_path: String, original_title: String, vote_count: Int) {
         
         self.poster_path = poster_path
         self.original_title = original_title
-        
+        self.vote_count = vote_count
     }
     
     var poster_path : String
     var original_title: String
-    
+    var vote_count: Int
 }
 

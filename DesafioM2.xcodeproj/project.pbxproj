@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		0174B430B4D67EF04D365A25 /* Pods_DesafioM2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B668F6C7121E2C017E042B0A /* Pods_DesafioM2.framework */; };
 		D30B5C2827B5DB1400A1040E /* ModelApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30B5C2727B5DB1400A1040E /* ModelApi.swift */; };
+		D30B5C2A27B7E90D00A1040E /* CardMovieImageModelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D30B5C2927B7E90D00A1040E /* CardMovieImageModelCell.xib */; };
+		D30B5C2C27B7E91E00A1040E /* CardMovieImageModelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30B5C2B27B7E91E00A1040E /* CardMovieImageModelCell.swift */; };
+		D30B5C2E27B7E96700A1040E /* CardMovieImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30B5C2D27B7E96700A1040E /* CardMovieImageModel.swift */; };
+		D30B5C3027B7F5D500A1040E /* GlobalMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30B5C2F27B7F5D500A1040E /* GlobalMethods.swift */; };
 		D35B77B227B1C8A300EB213B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35B77B127B1C8A300EB213B /* AppDelegate.swift */; };
 		D35B77B427B1C8A300EB213B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35B77B327B1C8A300EB213B /* SceneDelegate.swift */; };
 		D35B77B927B1C8A300EB213B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D35B77B727B1C8A300EB213B /* Main.storyboard */; };
@@ -28,6 +32,10 @@
 		70C774A0D49B8695BB1D98D3 /* Pods-DesafioM2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioM2.debug.xcconfig"; path = "Target Support Files/Pods-DesafioM2/Pods-DesafioM2.debug.xcconfig"; sourceTree = "<group>"; };
 		B668F6C7121E2C017E042B0A /* Pods_DesafioM2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DesafioM2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D30B5C2727B5DB1400A1040E /* ModelApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelApi.swift; sourceTree = "<group>"; };
+		D30B5C2927B7E90D00A1040E /* CardMovieImageModelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardMovieImageModelCell.xib; sourceTree = "<group>"; };
+		D30B5C2B27B7E91E00A1040E /* CardMovieImageModelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardMovieImageModelCell.swift; sourceTree = "<group>"; };
+		D30B5C2D27B7E96700A1040E /* CardMovieImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardMovieImageModel.swift; sourceTree = "<group>"; };
+		D30B5C2F27B7F5D500A1040E /* GlobalMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalMethods.swift; sourceTree = "<group>"; };
 		D35B77AE27B1C8A300EB213B /* DesafioM2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesafioM2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D35B77B127B1C8A300EB213B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D35B77B327B1C8A300EB213B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +135,7 @@
 		D35CBC3127B2C032003011FE /* GlobalMethods */ = {
 			isa = PBXGroup;
 			children = (
+				D30B5C2F27B7F5D500A1040E /* GlobalMethods.swift */,
 			);
 			path = GlobalMethods;
 			sourceTree = "<group>";
@@ -172,6 +181,9 @@
 				D35CBC4127B30FA1003011FE /* CardDetailsModelCell.swift */,
 				D35CBC4327B31004003011FE /* CardDetailsModel.swift */,
 				D30B5C2727B5DB1400A1040E /* ModelApi.swift */,
+				D30B5C2927B7E90D00A1040E /* CardMovieImageModelCell.xib */,
+				D30B5C2B27B7E91E00A1040E /* CardMovieImageModelCell.swift */,
+				D30B5C2D27B7E96700A1040E /* CardMovieImageModel.swift */,
 			);
 			path = ModelCell;
 			sourceTree = "<group>";
@@ -237,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D35B77BE27B1C8A400EB213B /* LaunchScreen.storyboard in Resources */,
+				D30B5C2A27B7E90D00A1040E /* CardMovieImageModelCell.xib in Resources */,
 				D35B77BB27B1C8A400EB213B /* Assets.xcassets in Resources */,
 				D35CBC4027B30F95003011FE /* CardDetailsModelCell.xib in Resources */,
 				D35B77B927B1C8A300EB213B /* Main.storyboard in Resources */,
@@ -295,12 +308,15 @@
 				D30B5C2827B5DB1400A1040E /* ModelApi.swift in Sources */,
 				D35B77B227B1C8A300EB213B /* AppDelegate.swift in Sources */,
 				D35CBC4427B31004003011FE /* CardDetailsModel.swift in Sources */,
+				D30B5C3027B7F5D500A1040E /* GlobalMethods.swift in Sources */,
 				D35CBC4627B3237E003011FE /* MovieDetailDataSource.swift in Sources */,
 				D35CBC4227B30FA1003011FE /* CardDetailsModelCell.swift in Sources */,
 				D35CBC3527B2C0BF003011FE /* GlobalProtocol.swift in Sources */,
 				D35CBC3E27B30DF5003011FE /* MovieDetailViewController.swift in Sources */,
 				D35CBC4827B489F3003011FE /* GlobalExtension.swift in Sources */,
+				D30B5C2C27B7E91E00A1040E /* CardMovieImageModelCell.swift in Sources */,
 				D35B77B427B1C8A300EB213B /* SceneDelegate.swift in Sources */,
+				D30B5C2E27B7E96700A1040E /* CardMovieImageModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

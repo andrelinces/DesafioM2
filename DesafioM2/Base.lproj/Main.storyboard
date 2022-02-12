@@ -16,31 +16,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="asM-01-88l">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="350"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="350" id="Jn6-9l-isb"/>
-                                </constraints>
-                            </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="uti-3K-1M4">
-                                <rect key="frame" x="0.0" y="350" width="414" height="512"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="uti-3K-1M4">
+                                <rect key="frame" x="0.0" y="-44" width="414" height="940"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2vR-Ns-xov"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="uti-3K-1M4" firstAttribute="bottom" secondItem="2vR-Ns-xov" secondAttribute="bottom" id="J0X-ZU-apf"/>
-                            <constraint firstItem="2vR-Ns-xov" firstAttribute="trailing" secondItem="asM-01-88l" secondAttribute="trailing" id="UAA-dQ-TLv"/>
-                            <constraint firstItem="asM-01-88l" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="WoR-Sg-eQ0"/>
-                            <constraint firstItem="uti-3K-1M4" firstAttribute="top" secondItem="asM-01-88l" secondAttribute="bottom" id="g1b-if-ac2"/>
+                            <constraint firstItem="uti-3K-1M4" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="-44" id="5zl-mQ-Wub"/>
+                            <constraint firstItem="uti-3K-1M4" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="J0X-ZU-apf"/>
                             <constraint firstItem="uti-3K-1M4" firstAttribute="leading" secondItem="2vR-Ns-xov" secondAttribute="leading" id="rTb-c7-kKY"/>
                             <constraint firstItem="2vR-Ns-xov" firstAttribute="trailing" secondItem="uti-3K-1M4" secondAttribute="trailing" id="xfu-Ui-Pgt"/>
-                            <constraint firstItem="asM-01-88l" firstAttribute="leading" secondItem="2vR-Ns-xov" secondAttribute="leading" id="yfq-oY-2gB"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="imageMovie" destination="asM-01-88l" id="7Bf-Jp-DCF"/>
                         <outlet property="tableView" destination="uti-3K-1M4" id="5ba-2c-igh"/>
                     </connections>
                 </viewController>

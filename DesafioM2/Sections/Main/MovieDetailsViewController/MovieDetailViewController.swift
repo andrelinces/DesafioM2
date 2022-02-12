@@ -30,7 +30,6 @@ class MovieDetailViewController: UIViewController, CardDetailsModelCallBack {
     
     var dataSource = MovieDetailDataSource()
   
-    @IBOutlet weak var imageMovie: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     
     
@@ -89,13 +88,17 @@ class MovieDetailViewController: UIViewController, CardDetailsModelCallBack {
                 
                 let movieDetailsApi =  MovieDetailViewController.getModelApi(modelApi_list: json)
                 
-                var urlFull = URL(string: "https://image.tmdb.org/t/p/w300" + movieDetailsApi.poster_path)
+                var urlFull = URL(string: "https://image.tmdb.org/t/p/w500" + movieDetailsApi.poster_path)
                 
                 //var urlFull = URL(string: \(baseUrl) + movieDetailsApi.poster_path)
     
                 print("testUrlfull... \(urlFull)")
                
-                self.imageMovie.kf.setImage(with: urlFull)
+//                self.imageMovie.kf.setImage(with: urlFull)
+                
+                let cellMovieImage = CardMovieImageModel(imageMovie : (urlFull ?? URL(string: "https://tm.ibxk.com.br/2021/12/02/02070127889006.jpg?ims=1120x420")!))
+                
+                self.dataSource.data.append(cellMovieImage)
                 
                 print("test movieDetailsApi.. \(movieDetailsApi.poster_path)")
             
@@ -116,7 +119,15 @@ class MovieDetailViewController: UIViewController, CardDetailsModelCallBack {
                 let cellMovieTitle = CardDetailsModel(delegate: self, movieDetails: movieTitle, tagFilmeFavorito: self.tagFilmeFavorito)
                 
                 self.dataSource.data.append(cellMovieTitle)
-                
+                self.dataSource.data.append(cellMovieTitle)
+                self.dataSource.data.append(cellMovieTitle)
+                self.dataSource.data.append(cellMovieTitle)
+                self.dataSource.data.append(cellMovieTitle)
+                self.dataSource.data.append(cellMovieTitle)
+                self.dataSource.data.append(cellMovieTitle)
+                self.dataSource.data.append(cellMovieTitle)
+                self.dataSource.data.append(cellMovieTitle)
+                self.dataSource.data.append(cellMovieTitle)
                 
                 //var urlFull = URL(string: \(baseUrl) + movieDetailsApi.poster_path)
     
