@@ -92,6 +92,7 @@ class CardDetailsModel: tableViewCompatible {
     class myTapCustomFavoriteMovie: UITapGestureRecognizer {
 
         var tagFavoriteMovie: Bool?
+        
 
     }
     

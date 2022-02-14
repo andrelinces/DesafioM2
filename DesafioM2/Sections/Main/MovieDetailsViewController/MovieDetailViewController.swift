@@ -11,6 +11,9 @@ import Kingfisher
 import SwiftUI
 
 class MovieDetailViewController: UIViewController, CardDetailsModelCallBack {
+    
+    var responseArray: NSArray = []
+    
     func actionClickFavoriteMovie(tagFilmeFavorite: Bool) {
         
         if tagFilmeFavorite {
@@ -33,7 +36,7 @@ class MovieDetailViewController: UIViewController, CardDetailsModelCallBack {
     @IBOutlet weak var tableView: UITableView!
     
     
-    var tagFilmeFavorito : Bool = true
+    var tagFilmeFavorito : Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +55,35 @@ class MovieDetailViewController: UIViewController, CardDetailsModelCallBack {
         
        return parsedData
     }
+    
+    static func getModelListApi(modelListApi_list : Data) -> ModelListApi {
+
+        //Parsing the data
+
+        let decoder = JSONDecoder()
+        let parsedData = try! decoder.decode(ModelListApi.self, from: modelListApi_list )
+
+       return parsedData
+    }
+//    //MARK: testing struct...
+//    struct ResultsApi: Decodable {
+//        
+//        var original_title, poster_path : String
+//        var release_date, genre_ids : Int
+//    }
+//    
+//    struct TestData: Decodable {
+//
+//        var test : ResultsApi
+//
+//    }
+//    struct ResultTest: Decodable {
+//        
+//        var testDados : TestData
+//        
+//    }
+    
+//    var test = self.TestData.
     
     
     func setupTableView () {
@@ -80,66 +112,113 @@ class MovieDetailViewController: UIViewController, CardDetailsModelCallBack {
 
     }
     
+//https://api.themoviedb.org/3/movie/550?api_key=8f04577aff690de3a89bef5e5f666fe5&language=en-US
     func recoverApi(){
         let baseUrl = URL(string: "https://image.tmdb.org/t/p/w400")
         //var urlFull = https://image.tmdb.org/t/p/w200/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg
         //Retrieves data JSON using alamofire api for to add objects.
-        AF.request("https://api.themoviedb.org/3/movie/550?api_key=8f04577aff690de3a89bef5e5f666fe5&append_to_response=poster_path").responseJSON { response in
+        
+        AF.request("https://api.themoviedb.org/3/movie/550?api_key=8f04577aff690de3a89bef5e5f666fe5&language=en-US").responseJSON { response in
             if let json = response.data {
-                
+
                 let movieDetailsApi =  MovieDetailViewController.getModelApi(modelApi_list: json)
-                
-                var urlFull = URL(string: "https://image.tmdb.org/t/p/w500" + movieDetailsApi.poster_path)
-                
-                //var urlFull = URL(string: \(baseUrl) + movieDetailsApi.poster_path)
-    
+
+//                var urlFull = URL(string: "https://image.tmdb.org/t/p/w500" + movieDetailsApi.poster_path)
+
+                var urlFull =  ("https://image.tmdb.org/t/p/w500" + movieDetailsApi.poster_path)
+
                 print("testUrlfull... \(urlFull)")
-               
+
 //                self.imageMovie.kf.setImage(with: urlFull)
+
+//                let cellMovieImage = CardMovieImageModel(imageMovie : (urlFull ?? URL(string: "https://tm.ibxk.com.br/2021/12/02/02070127889006.jpg?ims=1120x420")!))
                 
-                let cellMovieImage = CardMovieImageModel(imageMovie : (urlFull ?? URL(string: "https://tm.ibxk.com.br/2021/12/02/02070127889006.jpg?ims=1120x420")!))
-                
+                let cellMovieImage = CardMovieImageModel(imageMovie: urlFull)
+
                 self.dataSource.data.append(cellMovieImage)
-                
+
                 print("test movieDetailsApi.. \(movieDetailsApi.poster_path)")
-            
+
                 self.reloadInputViews()
             }
-            
+
         }
         //var movieTitle = CardDetailsModelCell().labelMovieDetails
         AF.request("https://api.themoviedb.org/3/movie/550?api_key=8f04577aff690de3a89bef5e5f666fe5&language=en-US").responseJSON { response in
             if let json = response.data {
                 
-                let originalTitle =  MovieDetailViewController.getModelApi(modelApi_list: json)
-                let voteCount = MovieDetailViewController.getModelApi(modelApi_list: json)
+                let modelApi =  MovieDetailViewController.getModelApi(modelApi_list: json)
                 
-                let popularity = MovieDetailViewController.getModelApi(modelApi_list: json)
-                
-                let movieTitle = originalTitle.original_title
-                let likesMovie = voteCount.vote_count
-                let popularityMovie = popularity.popularity
-                
-                
-                //let imageHeart = UIImage.init(systemName: "heart" )
-                
-                let cellMovieTitle = CardDetailsModel(delegate: self, movieDetails: movieTitle, tagFilmeFavorito: self.tagFilmeFavorito, likes: likesMovie, popularity: popularityMovie)
-                
-                self.dataSource.data.append(cellMovieTitle)
-                self.dataSource.data.append(cellMovieTitle)
-                self.dataSource.data.append(cellMovieTitle)
-                self.dataSource.data.append(cellMovieTitle)
-                self.dataSource.data.append(cellMovieTitle)
-                self.dataSource.data.append(cellMovieTitle)
-                self.dataSource.data.append(cellMovieTitle)
-                self.dataSource.data.append(cellMovieTitle)
-                self.dataSource.data.append(cellMovieTitle)
+                print("originalTitle : \(modelApi.popularity)")
+//                let voteCount = MovieDetailViewController.getModelApi(modelApi_list: json)
+//
+//                let popularity = MovieDetailViewController.getModelApi(modelApi_list: json)
+//
+//                let movieTitle = originalTitle.original_title
+                var likesMovie = modelApi.vote_count
+                likesMovie = likesMovie / 1000
+                var popularityMovie = modelApi.popularity
+//                popularityMovie = popularityMovie * 10
+//
+//                //let imageHeart = UIImage.init(systemName: "heart" )
+//
+                let cellMovieTitle = CardDetailsModel(delegate: self, movieDetails: modelApi.original_title, tagFilmeFavorito: self.tagFilmeFavorito, likes: likesMovie, popularity: popularityMovie)
+//
                 self.dataSource.data.append(cellMovieTitle)
                 
                 //var urlFull = URL(string: \(baseUrl) + movieDetailsApi.poster_path)
     
-                print("testUrlfull... \(originalTitle.original_title)")
+//                print("testUrlfull... \(originalTitle.original_title)")
               
+                self.tableView.reloadData()
+            }
+            self.tableView.reloadData()
+        }
+        
+        
+        
+        
+//        struct listPage: Decodable {
+//            let page: Int
+//        }
+//
+//        struct listResults: Decodable {
+//
+//            let results: [NSArray]
+//
+//        }
+//
+//        struct Result : Decodable {
+//            let goalsHomeTeam : Int?
+//            let goalsAwayTeam : Int?
+ //       }
+        
+        //Function recover List JSON, g​etSimilarMovies​.
+        AF.request("https://api.themoviedb.org/3/movie/555/similar?api_key=8f04577aff690de3a89bef5e5f666fe5&language=en-US&page=1").responseJSON { response in
+            if let json = response.data {
+
+                print("Json response teste: \(json)")
+
+                let testResults = MovieDetailViewController.getModelListApi(modelListApi_list: json)
+
+//                let testResults = MovieDetailViewController.getModelListApi(modelListApi_list: json)
+
+                print("test page... \(testResults.page)")
+                print("test results \(testResults.results[0].title)")
+                
+                for relacionado in testResults.results {
+                    
+                    print("test relacionado... \(relacionado.title)")
+                    
+                }
+
+
+                
+
+                //let cellListMovie = CardListMovieModel(imageMovieList: imageMovie, listTitleMovie: movieTitle, listYear: 1111, listGenre: "", imageChebox: "")
+
+                //self.dataSource.data.append(cellListMovie)
+
                 self.tableView.reloadData()
             }
             self.tableView.reloadData()

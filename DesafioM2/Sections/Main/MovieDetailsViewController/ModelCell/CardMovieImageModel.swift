@@ -9,7 +9,7 @@ import UIKit
 import Kingfisher
 
 class CardMovieImageModel: tableViewCompatible {
-    internal init (imageMovie: URL){
+    internal init (imageMovie: String){
         self.imageMovie = imageMovie
     }
     
@@ -19,17 +19,16 @@ class CardMovieImageModel: tableViewCompatible {
     }
     
     //variáveis de inicialização
-    var imageMovie: URL
+    var imageMovie: String
     
     func cellForTableView(tableView: UITableView, atIndexpath indexpath: IndexPath) -> UITableViewCell {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexpath) as? CardMovieImageModelCell {
             
-            cell.setupDesign()
+            //cell.setupDesign()
             cell.setupValues(imageMovie: imageMovie)
             
             return cell
-            
             
             
         }else{

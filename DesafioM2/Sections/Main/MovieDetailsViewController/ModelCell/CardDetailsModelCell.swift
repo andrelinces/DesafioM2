@@ -24,7 +24,7 @@ class CardDetailsModelCell: UITableViewCell {
     func setupValues (movieDetails: String, likes: Int, popularity: Double ) {
 
         labelMovieDetails.text = movieDetails
-        labellikes.text = String(likes) + " Likes"
+        labellikes.text = String(likes)+"k" + " Likes"
         labelPropularity.text = "Popularity " + String(popularity)
     }
     

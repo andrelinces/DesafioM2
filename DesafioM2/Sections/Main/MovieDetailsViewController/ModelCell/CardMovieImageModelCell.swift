@@ -18,18 +18,22 @@ class CardMovieImageModelCell: UITableViewCell {
       
     }
 
-    func setupValues (imageMovie: URL) {
+    func setupValues (imageMovie: String) {
 
         print("numero de subview\(imageViewMovie.layer.sublayers?.count)")
-        
+
         imageViewMovie.downloaded(from: imageMovie)
         imageViewMovie.contentMode = .scaleAspectFill
-        
+
         //Caso o gradiente nao tenha sido adicionado na layer
         if imageViewMovie.layer.sublayers == nil {
             imageViewMovie.addBlackGradientLayerInForeground(frame: imageViewMovie.bounds, colors:[.clear, .black])
         }
     }
-    
-    
+//    func setupValues (imageMovie: String){
+//
+//        imageViewMovie.image = UIImage(named: imageMovie)
+//
+//    }
+
 }

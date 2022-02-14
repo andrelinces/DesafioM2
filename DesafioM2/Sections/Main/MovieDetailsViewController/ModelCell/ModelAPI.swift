@@ -15,11 +15,13 @@ class ModelApi: Codable {
         self.original_title = original_title
         self.vote_count = vote_count
         self.popularity = popularity
+        
     }
     
     var poster_path : String
     var original_title: String
     var vote_count: Int
     var popularity: Double
+    
 }
 
