@@ -22,11 +22,14 @@ class CardListMovieModelCell: UITableViewCell {
       
     }
 
-    func setupValues (imageMovieList: String, listTitleMovie: String, listYear: Int, listGenre: String, imageChebox: String) {
+    func setupValues (imageMovieList: String, listTitleMovie: String, listYear: String, listGenre: String, imageChebox: String) {
         
-        imageViewMovieList.image = UIImage(named: imageMovieList)
+        //It Show imageMovie in similar List, and to displaying image correct.
+        imageViewMovieList.downloaded(from: imageMovieList)
+        imageViewMovieList.contentMode = .scaleAspectFill
+        
         labelListTitleMovie.text = listTitleMovie
-        labelListYear.text = String(listYear)
+        labelListYear.text = listYear
         labelListGenre.text = listGenre
         imageViewChebox.image = UIImage(named: imageChebox)
     }

@@ -7,7 +7,6 @@
 
 import UIKit
 import Alamofire
-import Kingfisher
 import SwiftUI
 
 class MovieDetailViewController: UIViewController, CardDetailsModelCallBack {
@@ -199,25 +198,41 @@ class MovieDetailViewController: UIViewController, CardDetailsModelCallBack {
 
                 print("Json response teste: \(json)")
 
-                let testResults = MovieDetailViewController.getModelListApi(modelListApi_list: json)
+                let modelResults = MovieDetailViewController.getModelListApi(modelListApi_list: json)
 
 //                let testResults = MovieDetailViewController.getModelListApi(modelListApi_list: json)
 
-                print("test page... \(testResults.page)")
-                print("test results \(testResults.results[0].title)")
+                print("test page... \(modelResults.page)")
+                print("test results \(modelResults.results[0].title)")
                 
-                for relacionado in testResults.results {
+                
+                
+                for listResults in modelResults.results {
+                   
+                    var urlListImageFull =  ("https://image.tmdb.org/t/p/w500" + listResults.poster_path)
                     
-                    print("test relacionado... \(relacionado.title)")
                     
+                    var formatDate = listResults.release_date
+                   
+//                    let startDate = formatDate
+//                    let dateFormatter = DateFormatter()
+//                    dateFormatter.dateFormat = "MM-dd-yyyy HH:mm:ss"
+//                    let dateFromStringstartDate :
+//                    NSDate = dateFormatter.date(from: startDate) as! NSDate
+//                    dateFormatter.dateFormat = "MM/dd/yyyy HH:mm:ss"
+//                    let strstartDate = dateFormatter.string(from: dateFromStringstartDate as Date)
+                    //print("test funcao data...  \(startDate)" )
+               
+                    print("test listResults... \(listResults.release_date)")
+                    
+                
+                    let cellListMovie = CardListMovieModel(imageMovieList: urlListImageFull , listTitleMovie: listResults.title, listYear: listResults.release_date, listGenre: "", imageChebox: "" )
+                    
+                    
+                    self.dataSource.data.append(cellListMovie)
+                    
+                    self.tableView.reloadData()
                 }
-
-
-                
-
-                //let cellListMovie = CardListMovieModel(imageMovieList: imageMovie, listTitleMovie: movieTitle, listYear: 1111, listGenre: "", imageChebox: "")
-
-                //self.dataSource.data.append(cellListMovie)
 
                 self.tableView.reloadData()
             }
@@ -225,6 +240,7 @@ class MovieDetailViewController: UIViewController, CardDetailsModelCallBack {
         }
     }
 
+    
 }
 
     

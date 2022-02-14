@@ -12,7 +12,7 @@ import UIKit
 //
 //}
 class CardListMovieModel: tableViewCompatible {
-    internal init (imageMovieList: String, listTitleMovie: String, listYear: Int, listGenre: String, imageChebox: String){
+    internal init (imageMovieList: String, listTitleMovie: String, listYear: String, listGenre: String, imageChebox: String){
         
         self.imageMovieList = imageMovieList
         self.listTitleMovie = listTitleMovie
@@ -30,7 +30,7 @@ class CardListMovieModel: tableViewCompatible {
     //variáveis de inicialização
     var imageMovieList: String
     var listTitleMovie: String
-    var listYear: Int
+    var listYear: String
     var listGenre: String
     var imageChebox: String
     
@@ -38,7 +38,7 @@ class CardListMovieModel: tableViewCompatible {
         
        if let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexpath) as? CardListMovieModelCell {
             
-            cell.setupDesign()
+            //cell.setupDesign()
             cell.setupValues(imageMovieList: imageMovieList, listTitleMovie: listTitleMovie, listYear: listYear, listGenre: listGenre, imageChebox: imageChebox)
             
             return cell

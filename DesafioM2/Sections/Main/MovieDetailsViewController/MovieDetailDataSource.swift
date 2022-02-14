@@ -20,6 +20,7 @@ class MovieDetailDataSource: NSObject {
         //Registing the cells
         tableView.register(UINib(nibName: "CardDetailsModelCell", bundle: Bundle.main), forCellReuseIdentifier: "CardDetailsModelCellIdentifier")
         tableView.register(UINib(nibName: "CardMovieImageModelCell", bundle: Bundle.main), forCellReuseIdentifier: "CardMovieImageModelCellIdentifier")
+        tableView.register(UINib(nibName: "CardListMovieModelCell", bundle: Bundle.main), forCellReuseIdentifier: "CardListMovieModelCellIdentifier")
     }
 }
 
@@ -37,6 +38,10 @@ extension MovieDetailDataSource: UITableViewDataSource {
         }else if let modelMovieImage = data[indexPath.row] as? CardMovieImageModel{
             
             return modelMovieImage.cellForTableView(tableView: tableView, atIndexpath: indexPath)
+            
+        }else if let modelListMovie = data[indexPath.row] as? CardListMovieModel{
+            
+            return modelListMovie.cellForTableView(tableView: tableView, atIndexpath: indexPath)
             
         }else{
             
