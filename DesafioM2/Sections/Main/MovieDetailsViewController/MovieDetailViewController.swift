@@ -9,7 +9,7 @@ import UIKit
 import Alamofire
 import SwiftUI
 
-class MovieDetailViewController: UIViewController, CardDetailsModelCallBack {
+class MovieDetailViewController: UIViewController, CardDetailsModelCallBack, CardListMovieModelCallBack {
     
     var responseArray: NSArray = []
     
@@ -26,6 +26,18 @@ class MovieDetailViewController: UIViewController, CardDetailsModelCallBack {
         
     }
     
+    func actionClickCheckMovie(tagCheckMovie: Bool) {
+        print("click in screen... \(tagCheckMovie)")
+        if tagCheckMovie {
+            self.tagCheckMovie = false
+        }else {
+            self.tagCheckMovie = true
+        }
+        
+        setupTableView()
+        self.tableView.reloadData()
+    }
+    
     func actionClickCardView(indexPath: IndexPath) {
         
     }
@@ -36,6 +48,7 @@ class MovieDetailViewController: UIViewController, CardDetailsModelCallBack {
     
     
     var tagFilmeFavorito : Bool = false
+    var tagCheckMovie : Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -226,7 +239,7 @@ class MovieDetailViewController: UIViewController, CardDetailsModelCallBack {
                     print("test listResults... \(listResults.release_date)")
                     
                 
-                    let cellListMovie = CardListMovieModel(imageMovieList: urlListImageFull , listTitleMovie: listResults.title, listYear: listResults.release_date, listGenre: "", imageChebox: "" )
+                    let cellListMovie = CardListMovieModel(delegate: self,  imageMovieList: urlListImageFull , listTitleMovie: listResults.title, listYear: listResults.release_date, listGenre: "", tagCheckMovie: self.tagCheckMovie )
                     
                     
                     self.dataSource.data.append(cellListMovie)

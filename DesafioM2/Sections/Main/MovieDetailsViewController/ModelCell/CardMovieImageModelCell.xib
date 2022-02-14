@@ -12,21 +12,21 @@
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CardMovieImageModelCellIdentifier" rowHeight="358" id="jjH-XA-gab" customClass="CardMovieImageModelCell" customModule="DesafioM2" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="396" height="350"/>
             <autoresizingMask key="autoresizingMask"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jjH-XA-gab" id="hKu-5j-XxL">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jjH-XA-gab" id="hKu-5j-XxL">
                 <rect key="frame" x="0.0" y="0.0" width="396" height="350"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kde-RI-pzT">
-                        <rect key="frame" x="0.0" y="0.0" width="396" height="350"/>
+                        <rect key="frame" x="0.0" y="0.0" width="396" height="400"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cooler" translatesAutoresizingMaskIntoConstraints="NO" id="8hX-tX-iz6">
-                                <rect key="frame" x="0.0" y="0.0" width="396" height="350"/>
+                                <rect key="frame" x="0.0" y="0.0" width="396" height="400"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="8hX-tX-iz6" secondAttribute="bottom" id="Cs2-fo-5uT"/>
-                            <constraint firstAttribute="height" constant="350" id="Kwo-rF-9TK"/>
+                            <constraint firstAttribute="height" constant="400" id="Kwo-rF-9TK"/>
                             <constraint firstItem="8hX-tX-iz6" firstAttribute="leading" secondItem="Kde-RI-pzT" secondAttribute="leading" id="RQW-XM-z9x"/>
                             <constraint firstItem="8hX-tX-iz6" firstAttribute="top" secondItem="Kde-RI-pzT" secondAttribute="top" id="fXD-SY-6ri"/>
                             <constraint firstAttribute="trailing" secondItem="8hX-tX-iz6" secondAttribute="trailing" id="tob-Cw-mUk"/>
