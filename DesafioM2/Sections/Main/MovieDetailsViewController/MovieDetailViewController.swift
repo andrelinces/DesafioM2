@@ -43,6 +43,14 @@ class MovieDetailViewController: UIViewController, CardDetailsModelCallBack, Car
     }
     
     var dataSource = MovieDetailDataSource()
+    
+    var urlImageMovie : String = ""
+    var urlDetails : String = ""
+    
+    func initiate(urlImageMovie : String, urlDetails : String){
+        self.urlImageMovie = urlImageMovie
+        self.urlDetails = urlDetails
+    }
   
     @IBOutlet weak var tableView: UITableView!
     
@@ -56,6 +64,11 @@ class MovieDetailViewController: UIViewController, CardDetailsModelCallBack, Car
         
         setupTableView()
   
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        dataSource.navigationController = nil
     }
      
     static func getModelApi(modelApi_list : Data) -> ModelApi {
@@ -82,6 +95,7 @@ class MovieDetailViewController: UIViewController, CardDetailsModelCallBack, Car
         print("Into function setupTable...")
 
         dataSource.data.removeAll()
+        dataSource.navigationController = self.navigationController
    
         recoverApi()
 
@@ -104,7 +118,7 @@ class MovieDetailViewController: UIViewController, CardDetailsModelCallBack, Car
         //Retrieves data JSON using alamofire api for to add objects.
         
         //MARK: func retrieves movie Image
-        AF.request("https://api.themoviedb.org/3/movie/603?api_key=8f04577aff690de3a89bef5e5f666fe5&language=en-US").responseJSON { response in
+        AF.request(urlImageMovie).responseJSON { response in
             if let json = response.data {
 
                 let movieDetailsApi =  MovieDetailViewController.getModelApi(modelApi_list: json)
@@ -119,7 +133,7 @@ class MovieDetailViewController: UIViewController, CardDetailsModelCallBack, Car
 
 //                let cellMovieImage = CardMovieImageModel(imageMovie : (urlFull ?? URL(string: "https://tm.ibxk.com.br/2021/12/02/02070127889006.jpg?ims=1120x420")!))
                 
-                let cellMovieImage = CardMovieImageModel(imageMovie: urlFull)
+                let cellMovieImage = CardMovieImageModel(navigationController : self.navigationController, imageMovie: urlFull)
 
                 self.dataSource.data.append(cellMovieImage)
 
@@ -130,7 +144,7 @@ class MovieDetailViewController: UIViewController, CardDetailsModelCallBack, Car
 
         }
         //MARK: func retrieves movie details: title, year, likes and popularity
-        AF.request("https://api.themoviedb.org/3/movie/603?api_key=8f04577aff690de3a89bef5e5f666fe5&language=en-US").responseJSON { response in
+        AF.request(urlDetails).responseJSON { response in
             if let json = response.data {
                 
                 let modelApi =  MovieDetailViewController.getModelApi(modelApi_list: json)
@@ -139,6 +153,8 @@ class MovieDetailViewController: UIViewController, CardDetailsModelCallBack, Car
 //                let voteCount = MovieDetailViewController.getModelApi(modelApi_list: json)
 //
 //                let popularity = MovieDetailViewController.getModelApi(modelApi_list: json)
+                
+                self.dataSource.titleMovie = modelApi.original_title
 //
 //                let movieTitle = originalTitle.original_title
                 var likesMovie = modelApi.vote_count

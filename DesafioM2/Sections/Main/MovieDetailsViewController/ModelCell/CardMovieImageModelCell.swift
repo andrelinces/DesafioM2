@@ -11,7 +11,7 @@ class CardMovieImageModelCell: UITableViewCell {
     
     @IBOutlet weak var imageViewMovie: UIImageView!
     @IBOutlet weak var cornerViewButtonReturn : UIView!
-    
+    @IBOutlet weak var buttonRetornar : UIButton!
     
     func setupDesign () {
 
@@ -39,4 +39,5 @@ class CardMovieImageModelCell: UITableViewCell {
 //
 //    }
 
+    
 }

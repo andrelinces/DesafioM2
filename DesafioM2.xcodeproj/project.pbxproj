@@ -31,6 +31,7 @@
 		D35CBC4627B3237E003011FE /* MovieDetailDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35CBC4527B3237E003011FE /* MovieDetailDataSource.swift */; };
 		D35CBC4827B489F3003011FE /* GlobalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35CBC4727B489F3003011FE /* GlobalExtension.swift */; };
 		D3D1B3AC27BB1F04009CB667 /* ModelGenres.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D1B3AB27BB1F04009CB667 /* ModelGenres.swift */; };
+		D3D1B3B027BBFA3E009CB667 /* SelectMovieDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D1B3AF27BBFA3E009CB667 /* SelectMovieDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		D35CBC4527B3237E003011FE /* MovieDetailDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailDataSource.swift; sourceTree = "<group>"; };
 		D35CBC4727B489F3003011FE /* GlobalExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalExtension.swift; sourceTree = "<group>"; };
 		D3D1B3AB27BB1F04009CB667 /* ModelGenres.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelGenres.swift; sourceTree = "<group>"; };
+		D3D1B3AF27BBFA3E009CB667 /* SelectMovieDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectMovieDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +174,7 @@
 		D35CBC3927B2C3BD003011FE /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				D3D1B3AE27BBFA16009CB667 /* SelectMovieDetails */,
 				D35CBC3A27B2C836003011FE /* MovieDetailsViewController */,
 			);
 			path = Main;
@@ -212,6 +215,14 @@
 				D3D1B3AB27BB1F04009CB667 /* ModelGenres.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		D3D1B3AE27BBFA16009CB667 /* SelectMovieDetails */ = {
+			isa = PBXGroup;
+			children = (
+				D3D1B3AF27BBFA3E009CB667 /* SelectMovieDetailsViewController.swift */,
+			);
+			path = SelectMovieDetails;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -342,6 +353,7 @@
 				D35CBC4627B3237E003011FE /* MovieDetailDataSource.swift in Sources */,
 				D30B5C3427B8299F00A1040E /* CardListMovieModelCell.swift in Sources */,
 				D35CBC4227B30FA1003011FE /* CardDetailsModelCell.swift in Sources */,
+				D3D1B3B027BBFA3E009CB667 /* SelectMovieDetailsViewController.swift in Sources */,
 				D35CBC3527B2C0BF003011FE /* GlobalProtocol.swift in Sources */,
 				D35CBC3E27B30DF5003011FE /* MovieDetailViewController.swift in Sources */,
 				D35CBC4827B489F3003011FE /* GlobalExtension.swift in Sources */,

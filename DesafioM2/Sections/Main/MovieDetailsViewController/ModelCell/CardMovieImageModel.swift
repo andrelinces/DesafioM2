@@ -9,7 +9,7 @@ import UIKit
 import Kingfisher
 
 class CardMovieImageModel: tableViewCompatible {
-    internal init (imageMovie: String){
+    internal init (navigationController : UINavigationController?, imageMovie: String){
         self.imageMovie = imageMovie
     }
     
@@ -20,6 +20,7 @@ class CardMovieImageModel: tableViewCompatible {
     
     //variáveis de inicialização
     var imageMovie: String
+    var navigationController : UINavigationController?
     
     func cellForTableView(tableView: UITableView, atIndexpath indexpath: IndexPath) -> UITableViewCell {
         
@@ -27,6 +28,8 @@ class CardMovieImageModel: tableViewCompatible {
             
             cell.setupDesign()
             cell.setupValues(imageMovie: imageMovie)
+            
+            cell.buttonRetornar.addTarget(self, action: #selector(acaoRetornar), for: .touchUpInside)
             
             return cell
             
@@ -36,6 +39,11 @@ class CardMovieImageModel: tableViewCompatible {
             return UITableViewCell()
             
         }
+    }
+    
+    @objc func acaoRetornar(sender : UITapGestureRecognizer){
+        print("Teste voltar : \(navigationController)")
+        navigationController?.popViewController(animated: true)
     }
     
 }

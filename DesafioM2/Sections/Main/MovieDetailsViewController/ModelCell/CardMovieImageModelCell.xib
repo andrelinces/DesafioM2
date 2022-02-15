@@ -65,6 +65,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="buttonRetornar" destination="gbO-iP-YGq" id="P4J-bB-pnC"/>
                 <outlet property="cornerViewButtonReturn" destination="I6O-qQ-C9H" id="C1R-q1-oJb"/>
                 <outlet property="imageViewMovie" destination="8hX-tX-iz6" id="4Nk-ki-6BV"/>
             </connections>

@@ -11,11 +11,19 @@ class MovieDetailDataSource: NSObject {
     
     var data = [Any] ()
     var navigationController: UINavigationController?
+    var titleMovie = ""
     
     func initializeTableView(tableView: UITableView){
         
         tableView.dataSource = self
-        //tableView.delegate = self
+        tableView.delegate = self
+        
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        navigationController?.navigationBar.alpha = 0
+        navigationController?.navigationBar.backItem?.title = "Voltar"
+        navigationController?.navigationBar.tintColor = .black
+        
+        print("title : \(titleMovie)")
         
         //Registing the cells
         tableView.register(UINib(nibName: "CardDetailsModelCell", bundle: Bundle.main), forCellReuseIdentifier: "CardDetailsModelCellIdentifier")
@@ -24,7 +32,7 @@ class MovieDetailDataSource: NSObject {
     }
 }
 
-extension MovieDetailDataSource: UITableViewDataSource {
+extension MovieDetailDataSource: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
@@ -50,18 +58,30 @@ extension MovieDetailDataSource: UITableViewDataSource {
         }
     }
     
+    //funciton for scrollview when the user scroll the list, show navigation bar
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        print("Scroll contentOffset: \(scrollView.contentOffset.y)")
+        
+        if navigationController != nil {
+            if scrollView.contentOffset.y > 30 {
+                
+                navigationController?.navigationBar.alpha = scrollView.contentOffset.y / 180
+                
+            }else{
+                navigationController?.navigationBar.alpha = 0
+                
+            }
+            
+            
+            if scrollView.contentOffset.y > 304 {
+                navigationController?.navigationBar.topItem?.title = titleMovie
+            }else {
+                navigationController?.navigationBar.topItem?.title = ""
+            }
+        }
+        
+    }
+    
 }
 
-//funciton for scrollview when the user scroll the list, show navigation bar
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        print("Scroll contentOffset: \(scrollView.contentOffset.y)")
-//        if scrollView.contentOffset.y > 10 {
-//
-//            navigationController?.navigationBar.alpha = scrollView.contentOffset.y / 100
-//
-//        }else{
-//
-//            navigationController?.navigationBar.alpha = 0
-//
-//        }
-//    }
+

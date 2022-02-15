@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ena-PS-88S">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Movie Detail View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="MovieDetailViewController" customModule="DesafioM2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="overFullScreen" id="BYZ-38-t0r" customClass="MovieDetailViewController" customModule="DesafioM2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -29,13 +30,154 @@
                             <constraint firstItem="2vR-Ns-xov" firstAttribute="trailing" secondItem="uti-3K-1M4" secondAttribute="trailing" id="xfu-Ui-Pgt"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="vt6-yo-UqW"/>
                     <connections>
                         <outlet property="tableView" destination="uti-3K-1M4" id="5ba-2c-igh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="40.579710144927539" y="65.625"/>
+            <point key="canvasLocation" x="2826.0869565217395" y="65.625"/>
+        </scene>
+        <!--Select Movie Details View Controller-->
+        <scene sceneID="g9H-K3-Vb7">
+            <objects>
+                <viewController modalPresentationStyle="overFullScreen" id="iV7-Wf-d2K" customClass="SelectMovieDetailsViewController" customModule="DesafioM2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NRS-Iu-0na">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CatalogoDeFilmes2" translatesAutoresizingMaskIntoConstraints="NO" id="CYG-xe-Jfo">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="YN5-8D-vjg"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Desafio Mobile2You" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VjV-Va-6Ha">
+                                <rect key="frame" x="16" y="282" width="382" height="38.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8RW-Yb-Q51">
+                                <rect key="frame" x="0.0" y="320.5" width="414" height="541.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="K9U-ui-7HD">
+                                        <rect key="frame" x="36" y="135" width="342" height="272"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ojE-ZG-h7O">
+                                                <rect key="frame" x="0.0" y="0.0" width="342" height="56"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="56" id="4fp-wY-XjQ"/>
+                                                </constraints>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="The Matrix"/>
+                                                <connections>
+                                                    <action selector="selectMovie1WithSender:" destination="iV7-Wf-d2K" eventType="touchUpInside" id="rsn-4r-0fA"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJQ-a1-twI">
+                                                <rect key="frame" x="0.0" y="72" width="342" height="56"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="56" id="IVK-8e-14W"/>
+                                                </constraints>
+                                                <color key="tintColor" systemColor="labelColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Maze Runner: The Death Cure"/>
+                                                <connections>
+                                                    <action selector="selectMovie2WithSender:" destination="iV7-Wf-d2K" eventType="touchUpInside" id="Mz9-Gg-rK1"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wuk-RY-2qG">
+                                                <rect key="frame" x="0.0" y="144" width="342" height="56"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="56" id="zBO-G6-v3q"/>
+                                                </constraints>
+                                                <color key="tintColor" systemColor="labelColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Figth Club"/>
+                                                <connections>
+                                                    <action selector="selectMovie3WithSender:" destination="iV7-Wf-d2K" eventType="touchUpInside" id="Prm-To-7nX"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C80-dd-gny">
+                                                <rect key="frame" x="0.0" y="216" width="342" height="56"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="56" id="EtQ-fN-vIT"/>
+                                                </constraints>
+                                                <color key="tintColor" systemColor="labelColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Poseidon"/>
+                                                <connections>
+                                                    <action selector="selectMovie4WithSender:" destination="iV7-Wf-d2K" eventType="touchUpInside" id="cgb-lY-1Fn"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="K9U-ui-7HD" secondAttribute="trailing" constant="36" id="d1w-jv-6CF"/>
+                                    <constraint firstItem="K9U-ui-7HD" firstAttribute="centerY" secondItem="8RW-Yb-Q51" secondAttribute="centerY" id="lbS-GW-NUR"/>
+                                    <constraint firstItem="K9U-ui-7HD" firstAttribute="leading" secondItem="8RW-Yb-Q51" secondAttribute="leading" constant="36" id="q3T-Ak-wda"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Dea-cc-QfH"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="CYG-xe-Jfo" firstAttribute="top" secondItem="Dea-cc-QfH" secondAttribute="top" constant="-44" id="1uZ-ge-sBi"/>
+                            <constraint firstItem="8RW-Yb-Q51" firstAttribute="leading" secondItem="Dea-cc-QfH" secondAttribute="leading" id="Ba0-BO-B8U"/>
+                            <constraint firstItem="8RW-Yb-Q51" firstAttribute="top" secondItem="VjV-Va-6Ha" secondAttribute="bottom" id="E1B-x2-kjc"/>
+                            <constraint firstItem="Dea-cc-QfH" firstAttribute="trailing" secondItem="CYG-xe-Jfo" secondAttribute="trailing" id="O0X-j3-4Sp"/>
+                            <constraint firstItem="Dea-cc-QfH" firstAttribute="trailing" secondItem="8RW-Yb-Q51" secondAttribute="trailing" id="Qfz-7t-Wbj"/>
+                            <constraint firstItem="VjV-Va-6Ha" firstAttribute="leading" secondItem="Dea-cc-QfH" secondAttribute="leading" constant="16" id="TEx-Kg-AJj"/>
+                            <constraint firstItem="CYG-xe-Jfo" firstAttribute="leading" secondItem="Dea-cc-QfH" secondAttribute="leading" id="VIw-PZ-c5C"/>
+                            <constraint firstItem="Dea-cc-QfH" firstAttribute="bottom" secondItem="8RW-Yb-Q51" secondAttribute="bottom" id="sFn-jo-Iil"/>
+                            <constraint firstItem="Dea-cc-QfH" firstAttribute="trailing" secondItem="VjV-Va-6Ha" secondAttribute="trailing" constant="16" id="seX-rk-BwW"/>
+                            <constraint firstItem="VjV-Va-6Ha" firstAttribute="top" secondItem="CYG-xe-Jfo" secondAttribute="bottom" constant="32" id="zbe-eG-o4Q"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="tiG-ua-XyJ"/>
+                    <connections>
+                        <outlet property="buttonFilme1" destination="ojE-ZG-h7O" id="gXG-sO-Lol"/>
+                        <outlet property="buttonFilme2" destination="UJQ-a1-twI" id="Y6B-oU-pdq"/>
+                        <outlet property="buttonFilme3" destination="Wuk-RY-2qG" id="v15-tl-2vN"/>
+                        <outlet property="buttonFilme4" destination="C80-dd-gny" id="E8W-It-RR3"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="segueMovieDetails" id="KAI-ED-qGq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8mn-TV-OSd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1876.8115942028987" y="65.625"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Yv9-Sq-4NS">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="ena-PS-88S" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HQb-NW-UHg">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="iV7-Wf-d2K" kind="relationship" relationship="rootViewController" id="JxC-rd-QEn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bbh-k5-cmF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="966.66666666666674" y="65.625"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="CatalogoDeFilmes2" width="730" height="415"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
