@@ -227,6 +227,7 @@ class MovieDetailViewController: UIViewController, CardDetailsModelCallBack, Car
                     
                     var formatDate = listResults.release_date
                    
+                    
 //                    let startDate = formatDate
 //                    let dateFormatter = DateFormatter()
 //                    dateFormatter.dateFormat = "MM-dd-yyyy HH:mm:ss"
@@ -236,10 +237,11 @@ class MovieDetailViewController: UIViewController, CardDetailsModelCallBack, Car
 //                    let strstartDate = dateFormatter.string(from: dateFromStringstartDate as Date)
                     //print("test funcao data...  \(startDate)" )
                
-                    print("test listResults... \(listResults.release_date)")
+                    print("test listResults... \(listResults.genre_ids)")
+                    
                     
                 
-                    let cellListMovie = CardListMovieModel(delegate: self,  imageMovieList: urlListImageFull , listTitleMovie: listResults.title, listYear: listResults.release_date, listGenre: "", tagCheckMovie: self.tagCheckMovie )
+                    let cellListMovie = CardListMovieModel(delegate: self,  imageMovieList: urlListImageFull , listTitleMovie: listResults.title, listYear: listResults.release_date, listGenre: listResults.genre_ids, tagCheckMovie: self.tagCheckMovie )
                     
                     
                     self.dataSource.data.append(cellListMovie)

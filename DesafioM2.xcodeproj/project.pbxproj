@@ -30,6 +30,7 @@
 		D35CBC4427B31004003011FE /* CardDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35CBC4327B31004003011FE /* CardDetailsModel.swift */; };
 		D35CBC4627B3237E003011FE /* MovieDetailDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35CBC4527B3237E003011FE /* MovieDetailDataSource.swift */; };
 		D35CBC4827B489F3003011FE /* GlobalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35CBC4727B489F3003011FE /* GlobalExtension.swift */; };
+		D3D1B3AC27BB1F04009CB667 /* ModelGenres.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D1B3AB27BB1F04009CB667 /* ModelGenres.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		D35CBC4327B31004003011FE /* CardDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsModel.swift; sourceTree = "<group>"; };
 		D35CBC4527B3237E003011FE /* MovieDetailDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailDataSource.swift; sourceTree = "<group>"; };
 		D35CBC4727B489F3003011FE /* GlobalExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalExtension.swift; sourceTree = "<group>"; };
+		D3D1B3AB27BB1F04009CB667 /* ModelGenres.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelGenres.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +195,7 @@
 				D30B5C2727B5DB1400A1040E /* ModelApi.swift */,
 				D30B5C3727B85B4000A1040E /* ModelListApi.swift */,
 				D30B5C3927B878F000A1040E /* ModelResult.swift */,
+				D3D1B3AB27BB1F04009CB667 /* ModelGenres.swift */,
 				D30B5C2927B7E90D00A1040E /* CardMovieImageModelCell.xib */,
 				D30B5C2B27B7E91E00A1040E /* CardMovieImageModelCell.swift */,
 				D30B5C2D27B7E96700A1040E /* CardMovieImageModel.swift */,
@@ -321,6 +324,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3D1B3AC27BB1F04009CB667 /* ModelGenres.swift in Sources */,
 				D30B5C2827B5DB1400A1040E /* ModelApi.swift in Sources */,
 				D30B5C3827B85B4000A1040E /* ModelListApi.swift in Sources */,
 				D35B77B227B1C8A300EB213B /* AppDelegate.swift in Sources */,

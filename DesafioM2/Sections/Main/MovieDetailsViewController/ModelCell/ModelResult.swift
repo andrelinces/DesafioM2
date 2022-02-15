@@ -7,12 +7,13 @@
 
 import UIKit
 import Alamofire
+import SwiftUI
 
 class ModelResult: Codable {
-    internal init(id: Double, title: String, poster_path: String, release_date: String) {
+    internal init(id: Double, title: String, poster_path: String, release_date: String, genre_ids: [Int]) {
         //self.adult = adult
         //self.backdrop_path = backdrop_path
-        //self.genre_ids = genre_ids
+        self.genre_ids = genre_ids
 //        self.results = results
         
         self.id = id
@@ -32,7 +33,7 @@ class ModelResult: Codable {
     
     //var adult: Bool
     //var backdrop_path: Int
-    //var genre_i[ds: NArray
+    var genre_ids: [Int]
 //    var results: [[String]]
     
     var id: Double
