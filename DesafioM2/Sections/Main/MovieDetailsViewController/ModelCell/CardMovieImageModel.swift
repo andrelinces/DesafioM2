@@ -25,7 +25,7 @@ class CardMovieImageModel: tableViewCompatible {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexpath) as? CardMovieImageModelCell {
             
-            //cell.setupDesign()
+            cell.setupDesign()
             cell.setupValues(imageMovie: imageMovie)
             
             return cell

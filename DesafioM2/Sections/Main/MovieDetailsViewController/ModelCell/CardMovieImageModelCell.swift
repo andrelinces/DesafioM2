@@ -10,11 +10,14 @@ import UIKit
 class CardMovieImageModelCell: UITableViewCell {
     
     @IBOutlet weak var imageViewMovie: UIImageView!
+    @IBOutlet weak var cornerViewButtonReturn : UIView!
     
     
     func setupDesign () {
 
 //        cardImageMovieView.changeDesigneView(cornerRadius: 28, shadow: CGSize(width: 0, height: 2) , shadowOpacity: 0.3)
+        
+        cornerViewButtonReturn.changeDesigneView(cornerRadius: cornerViewButtonReturn.frame.height/2, shadow: CGSize(width: 0, height: 0), shadowOpacity: 0)
       
     }
 
