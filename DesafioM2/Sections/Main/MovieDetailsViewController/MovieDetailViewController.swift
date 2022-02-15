@@ -104,14 +104,14 @@ class MovieDetailViewController: UIViewController, CardDetailsModelCallBack, Car
         //Retrieves data JSON using alamofire api for to add objects.
         
         //MARK: func retrieves movie Image
-        AF.request("https://api.themoviedb.org/3/movie/603?api_key=8f04577aff690de3a89bef5e5f666fe5&language=en-US").responseJSON { response in
+        AF.request("https://api.themoviedb.org/3/movie/550?api_key=8f04577aff690de3a89bef5e5f666fe5&language=en-US").responseJSON { response in
             if let json = response.data {
 
                 let movieDetailsApi =  MovieDetailViewController.getModelApi(modelApi_list: json)
 
 //                var urlFull = URL(string: "https://image.tmdb.org/t/p/w500" + movieDetailsApi.poster_path)
 
-                var urlFull =  ("https://image.tmdb.org/t/p/w500" + movieDetailsApi.poster_path)
+                var urlFull =  ("https://image.tmdb.org/t/p/w400" + movieDetailsApi.poster_path)
 
                 print("testUrlfull... \(urlFull)")
 
@@ -130,7 +130,7 @@ class MovieDetailViewController: UIViewController, CardDetailsModelCallBack, Car
 
         }
         //MARK: func retrieves movie details: title, year, likes and popularity
-        AF.request("https://api.themoviedb.org/3/movie/603?api_key=8f04577aff690de3a89bef5e5f666fe5&language=en-US").responseJSON { response in
+        AF.request("https://api.themoviedb.org/3/movie/550?api_key=8f04577aff690de3a89bef5e5f666fe5&language=en-US").responseJSON { response in
             if let json = response.data {
                 
                 let modelApi =  MovieDetailViewController.getModelApi(modelApi_list: json)

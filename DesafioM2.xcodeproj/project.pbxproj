@@ -129,6 +129,7 @@
 		D35CBC2E27B2BFD6003011FE /* GlobalHelpers */ = {
 			isa = PBXGroup;
 			children = (
+				D3D1B3AD27BBD88E009CB667 /* Models */,
 				D35CBC3227B2C056003011FE /* GlobalProtocol */,
 				D35CBC2F27B2BFF5003011FE /* GlobalExtension */,
 				D35CBC3127B2C032003011FE /* GlobalMethods */,
@@ -192,10 +193,6 @@
 				D35CBC3F27B30F95003011FE /* CardDetailsModelCell.xib */,
 				D35CBC4127B30FA1003011FE /* CardDetailsModelCell.swift */,
 				D35CBC4327B31004003011FE /* CardDetailsModel.swift */,
-				D30B5C2727B5DB1400A1040E /* ModelApi.swift */,
-				D30B5C3727B85B4000A1040E /* ModelListApi.swift */,
-				D30B5C3927B878F000A1040E /* ModelResult.swift */,
-				D3D1B3AB27BB1F04009CB667 /* ModelGenres.swift */,
 				D30B5C2927B7E90D00A1040E /* CardMovieImageModelCell.xib */,
 				D30B5C2B27B7E91E00A1040E /* CardMovieImageModelCell.swift */,
 				D30B5C2D27B7E96700A1040E /* CardMovieImageModel.swift */,
@@ -204,6 +201,17 @@
 				D30B5C3527B82A1C00A1040E /* CardListMovieModel.swift */,
 			);
 			path = ModelCell;
+			sourceTree = "<group>";
+		};
+		D3D1B3AD27BBD88E009CB667 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D30B5C2727B5DB1400A1040E /* ModelApi.swift */,
+				D30B5C3727B85B4000A1040E /* ModelListApi.swift */,
+				D30B5C3927B878F000A1040E /* ModelResult.swift */,
+				D3D1B3AB27BB1F04009CB667 /* ModelGenres.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
