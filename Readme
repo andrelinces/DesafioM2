@@ -8,7 +8,9 @@ I can't say which 'design pattern' I'm using specifically, but I consulted with 
 
 To run the application you must have installed cocoapods and alamofire 5.4. Used version of xcode (Version 13.1 (13A1030d)).
 
-Branch where the final project is located: M2dev1
+Branch where the final project is located: M2dev2
+
+If, when running the app, the movie image does not load, just run the project again and it will load. I couldn't let the alamofire async, due to the time to deliver the challenge. The project also has no treatment in case of offline tests (without internt).
 
 I used JSON for most of the project https://api.themoviedb.org/3/movie/550?api_key=8f04577aff690de3a89bef5e5f666fe5&language=en-US. I performed tests by changing the movie id, it works correctly.
 
