@@ -1,4 +1,15 @@
-M2 Challenge Project, replicating the detail screen layout of the movies from the TodoMovies4 app.
+Gostaria de agradecer a oportunidade, idepentente do resultado, muito Obrigado !
+
 The committees, comments, variables, function are written in English. I'm trying to study swift and english at the same time. Sorry if the translation or agreement is incorrect.
+
+M2 Challenge Project, replicating the detail screen layout of the movies from the TodoMovies4 app.
+
+I can't say which 'design pattern' I'm using specifically, but I consulted with an analyst in the area and he informed that the one I'm using would be a more organized pattern and used in companies, the app is more organized.
+
 To run the application you must have installed cocoapods and alamofire 5.4. Used version of xcode (Version 13.1 (13A1030d)).
+
 I used JSON for most of the project https://api.themoviedb.org/3/movie/550?api_key=8f04577aff690de3a89bef5e5f666fe5&language=en-US. I performed tests by changing the movie id, it works correctly.
+
+I couldn't check the movie screen effect as the todomovie4 app only installed on iphone. I didn't get an elongated iPhone to test, but consulting the internet, analysts in the area, I was informed about the gradient effect, which I tried to reproduce.
+
+I didn't understand what 'RX' would be, I searched, but I didn't find information.
