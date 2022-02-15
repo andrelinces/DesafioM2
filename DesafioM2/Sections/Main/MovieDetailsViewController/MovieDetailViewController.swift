@@ -55,9 +55,7 @@ class MovieDetailViewController: UIViewController, CardDetailsModelCallBack, Car
         print("passou no didload....")
         
         setupTableView()
-    
-        
-        
+  
     }
      
     static func getModelApi(modelApi_list : Data) -> ModelApi {
@@ -79,41 +77,12 @@ class MovieDetailViewController: UIViewController, CardDetailsModelCallBack, Car
 
        return parsedData
     }
-//    //MARK: testing struct...
-//    struct ResultsApi: Decodable {
-//        
-//        var original_title, poster_path : String
-//        var release_date, genre_ids : Int
-//    }
-//    
-//    struct TestData: Decodable {
-//
-//        var test : ResultsApi
-//
-//    }
-//    struct ResultTest: Decodable {
-//        
-//        var testDados : TestData
-//        
-//    }
-    
-//    var test = self.TestData.
-    
-    
+
     func setupTableView () {
         print("Into function setupTable...")
-        
-        
-//        dataSource = MovieDetailDataSource()
+
         dataSource.data.removeAll()
-        //let cellMovieDetails = ModelCardDetails(delegate: self, movieDetails: "teste um")
-        //let cellMovieDetails2 = ModelCardDetails(delegate: self, movieDetails: "Teste Dois", imageHeart: "teste")
-
-
-        //dataSource.data.append(cellMovieDetails)
-
-        //dataSource.data.append(cellMovieDetails2)
-
+   
         recoverApi()
 
         dataSource.initializeTableView(tableView: tableView)
@@ -126,13 +95,16 @@ class MovieDetailViewController: UIViewController, CardDetailsModelCallBack, Car
 
     }
     
-//https://api.themoviedb.org/3/movie/550?api_key=8f04577aff690de3a89bef5e5f666fe5&language=en-US
+    //MARK: All retrives from alamofire.
+    //MARK: func retrieves movie details: poster, title, year, likes, popularity
+    
     func recoverApi(){
         let baseUrl = URL(string: "https://image.tmdb.org/t/p/w400")
         //var urlFull = https://image.tmdb.org/t/p/w200/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg
         //Retrieves data JSON using alamofire api for to add objects.
         
-        AF.request("https://api.themoviedb.org/3/movie/336843?api_key=8f04577aff690de3a89bef5e5f666fe5&language=en-US").responseJSON { response in
+        //MARK: func retrieves movie Image
+        AF.request("https://api.themoviedb.org/3/movie/603?api_key=8f04577aff690de3a89bef5e5f666fe5&language=en-US").responseJSON { response in
             if let json = response.data {
 
                 let movieDetailsApi =  MovieDetailViewController.getModelApi(modelApi_list: json)
@@ -157,8 +129,8 @@ class MovieDetailViewController: UIViewController, CardDetailsModelCallBack, Car
             }
 
         }
-        //var movieTitle = CardDetailsModelCell().labelMovieDetails
-        AF.request("https://api.themoviedb.org/3/movie/336843?api_key=8f04577aff690de3a89bef5e5f666fe5&language=en-US").responseJSON { response in
+        //MARK: func retrieves movie details: title, year, likes and popularity
+        AF.request("https://api.themoviedb.org/3/movie/603?api_key=8f04577aff690de3a89bef5e5f666fe5&language=en-US").responseJSON { response in
             if let json = response.data {
                 
                 let modelApi =  MovieDetailViewController.getModelApi(modelApi_list: json)
@@ -170,7 +142,11 @@ class MovieDetailViewController: UIViewController, CardDetailsModelCallBack, Car
 //
 //                let movieTitle = originalTitle.original_title
                 var likesMovie = modelApi.vote_count
-                likesMovie = likesMovie / 1000
+                if likesMovie >= 1000{
+                    likesMovie = likesMovie * 1/1000
+                }else{
+                    likesMovie = likesMovie * 1
+                }
                 var popularityMovie = modelApi.popularity
 //                popularityMovie = popularityMovie * 10
 //
@@ -188,25 +164,7 @@ class MovieDetailViewController: UIViewController, CardDetailsModelCallBack, Car
             }
             self.tableView.reloadData()
         }
-        
-        
-        
-        
-//        struct listPage: Decodable {
-//            let page: Int
-//        }
-//
-//        struct listResults: Decodable {
-//
-//            let results: [NSArray]
-//
-//        }
-//
-//        struct Result : Decodable {
-//            let goalsHomeTeam : Int?
-//            let goalsAwayTeam : Int?
- //       }
-        
+   
         //Function recover List JSON, g​etSimilarMovies​.
         AF.request("https://api.themoviedb.org/3/movie/555/similar?api_key=8f04577aff690de3a89bef5e5f666fe5&language=en-US&page=1").responseJSON { response in
             if let json = response.data {

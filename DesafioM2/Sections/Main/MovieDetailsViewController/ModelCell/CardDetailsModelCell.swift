@@ -24,7 +24,12 @@ class CardDetailsModelCell: UITableViewCell {
     func setupValues (movieDetails: String, likes: Int, popularity: Double ) {
 
         labelMovieDetails.text = movieDetails
-        labellikes.text = String(likes)+"k" + " Likes"
+        if likes <= 999 {
+            labellikes.text = String(likes)+"k" + " Likes"
+        }else{
+            labellikes.text = String(likes) + " Likes"
+        }
+        
         labelPropularity.text = "Popularity " + String(popularity)
     }
     
