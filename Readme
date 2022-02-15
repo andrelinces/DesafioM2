@@ -8,6 +8,8 @@ I can't say which 'design pattern' I'm using specifically, but I consulted with 
 
 To run the application you must have installed cocoapods and alamofire 5.4. Used version of xcode (Version 13.1 (13A1030d)).
 
+Branch where the final project is located: M2dev1
+
 I used JSON for most of the project https://api.themoviedb.org/3/movie/550?api_key=8f04577aff690de3a89bef5e5f666fe5&language=en-US. I performed tests by changing the movie id, it works correctly.
 
 I couldn't check the movie screen effect as the todomovie4 app only installed on iphone. I didn't get an elongated iPhone to test, but consulting the internet, analysts in the area, I was informed about the gradient effect, which I tried to reproduce.
