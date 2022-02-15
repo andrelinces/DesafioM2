@@ -22,7 +22,7 @@ class CardListMovieModelCell: UITableViewCell {
       
     }
 
-    func setupValues (imageMovieList: String, listTitleMovie: String, listYear: String, listGenre: [Int]) {
+    func setupValues (imageMovieList: String, listTitleMovie: String, listYear: String, listGenre: String) {
         
         //It Show imageMovie in similar List, and to displaying image correct.
         imageViewMovieList.downloaded(from: imageMovieList)
@@ -30,7 +30,7 @@ class CardListMovieModelCell: UITableViewCell {
         
         labelListTitleMovie.text = listTitleMovie
         labelListYear.text = listYear
-        labelListGenre.text = listGenre as? String
+        labelListGenre.text = listGenre
         
     }
     

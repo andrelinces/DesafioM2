@@ -19,16 +19,30 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kde-RI-pzT">
                         <rect key="frame" x="0.0" y="0.0" width="396" height="400"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cooler" translatesAutoresizingMaskIntoConstraints="NO" id="8hX-tX-iz6">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8hX-tX-iz6">
                                 <rect key="frame" x="0.0" y="0.0" width="396" height="400"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbO-iP-YGq">
+                                <rect key="frame" x="16" y="48" width="56" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="56" id="D0T-63-D6k"/>
+                                    <constraint firstAttribute="height" constant="56" id="WmB-7O-AXr"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="chevron.backward" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage"/>
+                                </buttonConfiguration>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="8hX-tX-iz6" secondAttribute="bottom" id="Cs2-fo-5uT"/>
                             <constraint firstAttribute="height" constant="400" id="Kwo-rF-9TK"/>
+                            <constraint firstItem="gbO-iP-YGq" firstAttribute="leading" secondItem="Kde-RI-pzT" secondAttribute="leading" constant="16" id="OQk-ZT-NWW"/>
                             <constraint firstItem="8hX-tX-iz6" firstAttribute="leading" secondItem="Kde-RI-pzT" secondAttribute="leading" id="RQW-XM-z9x"/>
                             <constraint firstItem="8hX-tX-iz6" firstAttribute="top" secondItem="Kde-RI-pzT" secondAttribute="top" id="fXD-SY-6ri"/>
+                            <constraint firstItem="gbO-iP-YGq" firstAttribute="top" secondItem="Kde-RI-pzT" secondAttribute="top" constant="48" id="tla-c2-9Ty"/>
                             <constraint firstAttribute="trailing" secondItem="8hX-tX-iz6" secondAttribute="trailing" id="tob-Cw-mUk"/>
                         </constraints>
                     </view>
@@ -47,7 +61,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="Cooler" width="1156" height="868"/>
+        <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

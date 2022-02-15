@@ -13,7 +13,7 @@ protocol CardListMovieModelCallBack: class {
 
 }
 class CardListMovieModel: tableViewCompatible {
-    internal init (delegate: CardListMovieModelCallBack?, imageMovieList: String, listTitleMovie: String, listYear: String, listGenre: [Int], tagCheckMovie: Bool) {
+    internal init (delegate: CardListMovieModelCallBack?, imageMovieList: String, listTitleMovie: String, listYear: String, listGenre: String, tagCheckMovie: Bool) {
         
         self.delegate = delegate
         self.imageMovieList = imageMovieList
@@ -34,7 +34,7 @@ class CardListMovieModel: tableViewCompatible {
     var imageMovieList: String
     var listTitleMovie: String
     var listYear: String
-    var listGenre: [Int]
+    var listGenre: String
     var tagCheckMovie: Bool
     
     

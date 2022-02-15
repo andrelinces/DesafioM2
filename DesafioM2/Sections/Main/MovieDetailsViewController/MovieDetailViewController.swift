@@ -56,6 +56,8 @@ class MovieDetailViewController: UIViewController, CardDetailsModelCallBack, Car
         
         setupTableView()
     
+        
+        
     }
      
     static func getModelApi(modelApi_list : Data) -> ModelApi {
@@ -130,7 +132,7 @@ class MovieDetailViewController: UIViewController, CardDetailsModelCallBack, Car
         //var urlFull = https://image.tmdb.org/t/p/w200/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg
         //Retrieves data JSON using alamofire api for to add objects.
         
-        AF.request("https://api.themoviedb.org/3/movie/550?api_key=8f04577aff690de3a89bef5e5f666fe5&language=en-US").responseJSON { response in
+        AF.request("https://api.themoviedb.org/3/movie/336843?api_key=8f04577aff690de3a89bef5e5f666fe5&language=en-US").responseJSON { response in
             if let json = response.data {
 
                 let movieDetailsApi =  MovieDetailViewController.getModelApi(modelApi_list: json)
@@ -156,7 +158,7 @@ class MovieDetailViewController: UIViewController, CardDetailsModelCallBack, Car
 
         }
         //var movieTitle = CardDetailsModelCell().labelMovieDetails
-        AF.request("https://api.themoviedb.org/3/movie/550?api_key=8f04577aff690de3a89bef5e5f666fe5&language=en-US").responseJSON { response in
+        AF.request("https://api.themoviedb.org/3/movie/336843?api_key=8f04577aff690de3a89bef5e5f666fe5&language=en-US").responseJSON { response in
             if let json = response.data {
                 
                 let modelApi =  MovieDetailViewController.getModelApi(modelApi_list: json)
@@ -239,9 +241,36 @@ class MovieDetailViewController: UIViewController, CardDetailsModelCallBack, Car
                
                     print("test listResults... \(listResults.genre_ids)")
                     
+                    //Conver from [int] for [string]
+                    var arr: [Int] = listResults.genre_ids
+
+                    var stringArray = arr.map { String($0) }
+                    
+                    
+                    
+                    print("test listGenre... \(listResults.genre_ids.count)")
+                    
+//                    var stringArray = arr.map {
+//                      (number: Int) -> String in
+//                      return String(number)
+//                    }
+                    
+                    var generoFilme = ""
+                    var countListMovieId = 0
+                    for idGenero in listResults.genre_ids {
+                        //Verifica se devemos adicionar a ultima virgula
+                        if countListMovieId == listResults.genre_ids.count - 1 {
+                            generoFilme += GlobalMethods.getGenero(idGenero: idGenero)
+                            countListMovieId += 1
+                        }else {
+                            generoFilme += GlobalMethods.getGenero(idGenero: idGenero) + ", "
+                            countListMovieId += 1
+                        }
+                        
+                    }
                     
                 
-                    let cellListMovie = CardListMovieModel(delegate: self,  imageMovieList: urlListImageFull , listTitleMovie: listResults.title, listYear: listResults.release_date, listGenre: listResults.genre_ids, tagCheckMovie: self.tagCheckMovie )
+                    let cellListMovie = CardListMovieModel(delegate: self,  imageMovieList: urlListImageFull , listTitleMovie: listResults.title, listYear: GlobalMethods.getDataYearFromString(dateString: listResults.release_date), listGenre: generoFilme, tagCheckMovie: self.tagCheckMovie )
                     
                     
                     self.dataSource.data.append(cellListMovie)
