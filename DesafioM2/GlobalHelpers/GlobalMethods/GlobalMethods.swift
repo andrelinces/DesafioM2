@@ -8,11 +8,8 @@
 import UIKit
 
 class GlobalMethods {
-    //
+    //MARK: Func for to convert date.
    static func getDataYearFromString (dateString : String) -> String {
-        
-       
-//       let isoDate = "2016-04-14T10:44:00+0000"
 
        let dateFormatter = DateFormatter()
        dateFormatter.locale = Locale(identifier: "en_US_POSIX") // set locale to reliable US_POSIX
@@ -20,14 +17,14 @@ class GlobalMethods {
        let date = dateFormatter.date(from:dateString)!
        
         let formatter = DateFormatter()
-//        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+
+       //Format date for to display only the year of the filme.
        formatter.dateFormat = "yyyy"
         let myString = formatter.string(from: date as Date)
-       
-//        print("Teste converte data.. \(myString)")
+   
         return myString
     }
-    
+    //MARK: Func model for to compare, JSON retrieved with list from genres.
     static func getGenero(idGenero : Int) -> String {
         
         switch idGenero {
@@ -72,9 +69,7 @@ class GlobalMethods {
         default:
             return "Action"
         }
-        
-         
+      
     }
-    
-    
+       
 }

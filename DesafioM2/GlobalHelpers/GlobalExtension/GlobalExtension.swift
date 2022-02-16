@@ -19,7 +19,7 @@ extension UIView {
         
     }
     
-    //Modelcardview
+    //Modelcardview, card edge.
     func borderDesigneView(cornerRadius: CGFloat){
         self.layer.cornerRadius = cornerRadius
         
@@ -30,7 +30,7 @@ extension UIView {
     }
       
 }
-
+//Retrieves movie image of the JSON.
 extension UIImageView {
     func downloaded(from url: URL, contentMode mode: ContentMode = .scaleAspectFit) {
         contentMode = mode
@@ -53,7 +53,7 @@ extension UIImageView {
 }
 
 extension UIView{
-   // For insert layer in Foreground
+   // For insert layer in Foreground.  Displays effect black gradient.
    func addBlackGradientLayerInForeground(frame: CGRect, colors:[UIColor]){
     let gradient = CAGradientLayer()
     gradient.frame = frame

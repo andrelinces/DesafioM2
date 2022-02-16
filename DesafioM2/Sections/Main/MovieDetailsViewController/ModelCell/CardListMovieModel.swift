@@ -29,8 +29,8 @@ class CardListMovieModel: tableViewCompatible {
         
         return "CardListMovieModelCellIdentifier"
     }
-    
-    //variáveis de inicialização
+   
+    //startup variables.
     var imageMovieList: String
     var listTitleMovie: String
     var listYear: String
@@ -43,11 +43,10 @@ class CardListMovieModel: tableViewCompatible {
        if let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexpath) as? CardListMovieModelCell {
             
             //cell.setupDesign()
-           
             cell.setupValues(imageMovieList: imageMovieList, listTitleMovie: listTitleMovie, listYear: listYear, listGenre: listGenre)
             cell.setupCheck(tagCheckMovie: tagCheckMovie)
            
-           //Adding clicks in card1view...
+           //Adding clicks in cardView...
            let gestureCliqueCard = myTapCustom(target: self, action: #selector(actionClickCardView))
            gestureCliqueCard.indexPath = indexpath
            
@@ -67,7 +66,7 @@ class CardListMovieModel: tableViewCompatible {
         }
         
     }
-    
+    //MARK: METHODS FOR GET CLICK OF THE USER IN SCREEN, AND POSITION.
     @objc func actionClickCardView (sender: myTapCustom) {
 
         delegate?.actionClickCardView(indexPath: sender.indexPath!)

@@ -43,8 +43,7 @@ class CardListMovieModelCell: UITableViewCell {
         }else {
             imageViewChebox.image = UIImage(systemName: "checkmark.circle")
             imageViewChebox.tintColor = .lightGray
-        }
+        } 
+    }
     
-}
-
 }

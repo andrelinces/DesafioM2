@@ -18,7 +18,7 @@ class CardMovieImageModel: tableViewCompatible {
         return "CardMovieImageModelCellIdentifier"
     }
     
-    //variáveis de inicialização
+    //startup variables.
     var imageMovie: String
     
     func cellForTableView(tableView: UITableView, atIndexpath indexpath: IndexPath) -> UITableViewCell {

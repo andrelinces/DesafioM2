@@ -24,8 +24,9 @@ class CardDetailsModelCell: UITableViewCell {
     func setupValues (movieDetails: String, likes: Int, popularity: Double ) {
 
         labelMovieDetails.text = movieDetails
-        if likes <= 999 {
+        if likes <= 199 {
             labellikes.text = String(likes)+"k" + " Likes"
+            
         }else{
             labellikes.text = String(likes) + " Likes"
         }
@@ -35,7 +36,7 @@ class CardDetailsModelCell: UITableViewCell {
     
     func setupImage (tagFilmeFavorito: Bool ) {
         
-        //Verifica se o filme è favorito
+        //Mark the movie with favorite.
         if tagFilmeFavorito {
             imageViewHeart.image = UIImage(systemName: "heart.fill")
             imageViewHeart.tintColor = .red

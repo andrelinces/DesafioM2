@@ -8,17 +8,17 @@
 import UIKit
 
 class ModelListApi: Codable {
-    
+    //Func model that retrieves similar movies from JSON.
     internal init(page: Int, results: [ModelResult] ) {
        
         self.page = page
         self.results = results
-        //self.genre_ids = genre_ids
+        
     }
     
     var page: Int
     var results : [ModelResult]
-    //var genre_ids : [ModelGenres]
+    
 }
     
 
