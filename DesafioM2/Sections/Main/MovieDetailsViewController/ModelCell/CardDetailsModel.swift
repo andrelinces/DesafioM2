@@ -37,21 +37,17 @@ class CardDetailsModel: tableViewCompatible {
     var popularity: Double
     
     func cellForTableView(tableView: UITableView, atIndexpath indexpath: IndexPath) -> UITableViewCell {
-
+      
+        //It is starting the cell attributes (design, values...) declared in the modelCell.
         if let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexpath) as? CardDetailsModelCell{
-
-            //Inicializando a célula (design, values etc...) atributos declarados na 'modelCell
-            //       cell.setupDesign()
-            //cell.setupDesign()
             
+            //Effect applied to the cell border, when the cell has a border.
             //cell.borderDesigneView(cornerRadius: 50)
             cell.setupValues(movieDetails: movieDetails, likes: likes, popularity: popularity)
             cell.setupImage(tagFilmeFavorito: tagFilmeFavorito)
+    
             
-            //test cell tableView
-            //cell.textLabel?.text = "test cell tableView"
-            
-            //Adding clicks in card1view...
+            //Adding clicks in cardView...
             let gestureCliqueCard = myTapCustom(target: self, action: #selector(actionClickCardView))
             gestureCliqueCard.indexPath = indexpath
             
@@ -71,7 +67,7 @@ class CardDetailsModel: tableViewCompatible {
             
         }
     }
-    
+    //MARK: FUNC for to atribut click in cards and retrieves the a position ot the cell selected.
     @objc func actionClickCardView (sender: myTapCustom) {
 
         delegate?.actionClickCardView(indexPath: sender.indexPath!)

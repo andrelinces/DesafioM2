@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class SelectMovieDetailsViewController: UIViewController {
 
@@ -29,16 +30,20 @@ class SelectMovieDetailsViewController: UIViewController {
             movieDetails.initiate(urlImageMovie: urlImageMovie, urlDetails: urlDetails)
         }
     }
-    
+    //Desing and collor of the buttons in screen select movie.
     func setupDesing(){
         
         buttonFilme1.changeDesigneView(cornerRadius: buttonFilme1.frame.height/2, shadow: CGSize(width: 0, height: 2), shadowOpacity: 0.3)
+        buttonFilme1.backgroundColor = .lightGray
         buttonFilme2.changeDesigneView(cornerRadius: buttonFilme1.frame.height/2, shadow: CGSize(width: 0, height: 2), shadowOpacity: 0.3)
+        buttonFilme2.backgroundColor = .lightGray
         buttonFilme3.changeDesigneView(cornerRadius: buttonFilme1.frame.height/2, shadow: CGSize(width: 0, height: 2), shadowOpacity: 0.3)
+        buttonFilme3.backgroundColor = .lightGray
         buttonFilme4.changeDesigneView(cornerRadius: buttonFilme1.frame.height/2, shadow: CGSize(width: 0, height: 2), shadowOpacity: 0.3)
+        buttonFilme4.backgroundColor = .lightGray
         
     }
-    
+    //It's Sents user from movie details, when he click in selected button.
     @IBAction func selectMovie1(sender : UIButton) {
         
         urlImageMovie = "https://api.themoviedb.org/3/movie/603?api_key=8f04577aff690de3a89bef5e5f666fe5&language=en-US"

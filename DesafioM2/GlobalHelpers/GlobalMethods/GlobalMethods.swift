@@ -10,24 +10,21 @@ import UIKit
 class GlobalMethods {
     //
    static func getDataYearFromString (dateString : String) -> String {
-        
-       
-//       let isoDate = "2016-04-14T10:44:00+0000"
-
+ 
+       //MARK: Formates data retrives from API of the type 'string'
        let dateFormatter = DateFormatter()
        dateFormatter.locale = Locale(identifier: "en_US_POSIX") // set locale to reliable US_POSIX
        dateFormatter.dateFormat = "yyyy-MM-dd"
        let date = dateFormatter.date(from:dateString)!
        
         let formatter = DateFormatter()
-//        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+
        formatter.dateFormat = "yyyy"
         let myString = formatter.string(from: date as Date)
-       
-//        print("Teste converte data.. \(myString)")
+ 
         return myString
     }
-    
+    //MARK: List geted from object genre_ids for to compare with ids retrieves from API results.
     static func getGenero(idGenero : Int) -> String {
         
         switch idGenero {

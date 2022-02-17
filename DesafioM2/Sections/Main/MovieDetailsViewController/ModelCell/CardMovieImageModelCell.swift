@@ -15,29 +15,21 @@ class CardMovieImageModelCell: UITableViewCell {
     
     func setupDesign () {
 
-//        cardImageMovieView.changeDesigneView(cornerRadius: 28, shadow: CGSize(width: 0, height: 2) , shadowOpacity: 0.3)
-        
         cornerViewButtonReturn.changeDesigneView(cornerRadius: cornerViewButtonReturn.frame.height/2, shadow: CGSize(width: 0, height: 0), shadowOpacity: 0)
       
     }
 
     func setupValues (imageMovie: String) {
-
+        
         print("numero de subview\(imageViewMovie.layer.sublayers?.count)")
-
+        
         imageViewMovie.downloaded(from: imageMovie)
         imageViewMovie.contentMode = .scaleAspectFill
-
-        //Caso o gradiente nao tenha sido adicionado na layer
+        
+        //In case gradient don't have apllyed correcty.
         if imageViewMovie.layer.sublayers == nil {
             imageViewMovie.addBlackGradientLayerInForeground(frame: imageViewMovie.bounds, colors:[.clear, .black])
         }
     }
-//    func setupValues (imageMovie: String){
-//
-//        imageViewMovie.image = UIImage(named: imageMovie)
-//
-//    }
-
     
 }

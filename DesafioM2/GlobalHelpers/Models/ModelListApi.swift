@@ -8,17 +8,17 @@
 import UIKit
 
 class ModelListApi: Codable {
-    
+    //MARK: Retrieves model API Results, Array Object
     internal init(page: Int, results: [ModelResult] ) {
        
         self.page = page
         self.results = results
-        //self.genre_ids = genre_ids
+   
     }
     
     var page: Int
     var results : [ModelResult]
-    //var genre_ids : [ModelGenres]
+
 }
     
 

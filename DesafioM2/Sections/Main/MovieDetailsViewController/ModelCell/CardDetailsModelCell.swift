@@ -15,12 +15,13 @@ class CardDetailsModelCell: UITableViewCell {
     @IBOutlet weak var labellikes: UILabel!
     @IBOutlet weak var labelPropularity: UILabel!
     
+    //Func used for to define of the desing from cell.
     func setupDesign () {
 
         cardViewMovieDetails.changeDesigneView(cornerRadius: 28, shadow: CGSize(width: 0, height: 2) , shadowOpacity: 0.3)
       
     }
-
+    //Func used for to define whats itens from cell, to be loading.
     func setupValues (movieDetails: String, likes: Int, popularity: Double ) {
 
         labelMovieDetails.text = movieDetails
@@ -32,7 +33,7 @@ class CardDetailsModelCell: UITableViewCell {
         
         labelPropularity.text = "Popularity " + String(popularity)
     }
-    
+    //Func used for to define image cell, to be loading.
     func setupImage (tagFilmeFavorito: Bool ) {
         
         //Verifica se o filme è favorito

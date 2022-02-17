@@ -12,7 +12,7 @@ import SwiftUI
 class MovieDetailViewController: UIViewController, CardDetailsModelCallBack, CardListMovieModelCallBack {
     
     var responseArray: NSArray = []
-    
+    //Func for to Favorite movie.
     func actionClickFavoriteMovie(tagFilmeFavorite: Bool) {
         
         if tagFilmeFavorite {
@@ -25,7 +25,7 @@ class MovieDetailViewController: UIViewController, CardDetailsModelCallBack, Car
         self.tableView.reloadData()
         
     }
-    
+    //Func for to selected tag of the list similar movies.
     func actionClickCheckMovie(tagCheckMovie: Bool) {
         print("click in screen... \(tagCheckMovie)")
         if tagCheckMovie {
@@ -60,17 +60,16 @@ class MovieDetailViewController: UIViewController, CardDetailsModelCallBack, Car
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("passou no didload....")
-        
+       
         setupTableView()
   
     }
-    
+    //Update from navigation controller.
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         dataSource.navigationController = nil
     }
-     
+     //MARK: Func for to retrieves from API movie image and movie details.
     static func getModelApi(modelApi_list : Data) -> ModelApi {
         
         //Parsing the data
@@ -80,7 +79,7 @@ class MovieDetailViewController: UIViewController, CardDetailsModelCallBack, Car
         
        return parsedData
     }
-    
+    //MARK: Func for to retrieves from API similar movies and genre details.
     static func getModelListApi(modelListApi_list : Data) -> ModelListApi {
 
         //Parsing the data
@@ -123,16 +122,9 @@ class MovieDetailViewController: UIViewController, CardDetailsModelCallBack, Car
 
                 let movieDetailsApi =  MovieDetailViewController.getModelApi(modelApi_list: json)
 
-//                var urlFull = URL(string: "https://image.tmdb.org/t/p/w500" + movieDetailsApi.poster_path)
 
                 var urlFull =  ("https://image.tmdb.org/t/p/w500" + movieDetailsApi.poster_path)
 
-                print("testUrlfull... \(urlFull)")
-
-//                self.imageMovie.kf.setImage(with: urlFull)
-
-//                let cellMovieImage = CardMovieImageModel(imageMovie : (urlFull ?? URL(string: "https://tm.ibxk.com.br/2021/12/02/02070127889006.jpg?ims=1120x420")!))
-                
                 let cellMovieImage = CardMovieImageModel(navigationController : self.navigationController, imageMovie: urlFull)
 
                 self.dataSource.data.append(cellMovieImage)

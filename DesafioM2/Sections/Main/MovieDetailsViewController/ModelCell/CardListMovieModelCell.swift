@@ -33,7 +33,7 @@ class CardListMovieModelCell: UITableViewCell {
         labelListGenre.text = listGenre
         
     }
-    
+    //MARK: Func for to mark the tag how the favorite.
     func setupCheck (tagCheckMovie: Bool ) {
         
         //Active CheckBok, to mark the movie the with wacthed.
@@ -44,7 +44,7 @@ class CardListMovieModelCell: UITableViewCell {
             imageViewChebox.image = UIImage(systemName: "checkmark.circle")
             imageViewChebox.tintColor = .lightGray
         }
+        
+    }
     
-}
-
 }

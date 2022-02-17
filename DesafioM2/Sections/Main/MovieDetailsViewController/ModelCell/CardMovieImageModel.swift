@@ -18,7 +18,7 @@ class CardMovieImageModel: tableViewCompatible {
         return "CardMovieImageModelCellIdentifier"
     }
     
-    //variáveis de inicialização
+    //Variables of the inicilizaing.
     var imageMovie: String
     var navigationController : UINavigationController?
     
@@ -40,7 +40,7 @@ class CardMovieImageModel: tableViewCompatible {
             
         }
     }
-    
+    //func button return.
     @objc func acaoRetornar(sender : UITapGestureRecognizer){
         print("Teste voltar : \(navigationController)")
         navigationController?.popViewController(animated: true)

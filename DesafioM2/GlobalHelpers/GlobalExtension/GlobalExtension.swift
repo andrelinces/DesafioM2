@@ -30,7 +30,7 @@ extension UIView {
     }
       
 }
-
+//MARK: Retrieves the Movie Image, donwload from URL of API
 extension UIImageView {
     func downloaded(from url: URL, contentMode mode: ContentMode = .scaleAspectFit) {
         contentMode = mode
@@ -51,7 +51,7 @@ extension UIImageView {
         downloaded(from: url, contentMode: mode)
     }
 }
-
+//MARK: Gradient effect apllied in background screen.
 extension UIView{
    // For insert layer in Foreground
    func addBlackGradientLayerInForeground(frame: CGRect, colors:[UIColor]){

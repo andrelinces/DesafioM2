@@ -8,6 +8,7 @@
 import UIKit
 
 class ModelGenres: Codable{
+    //Retrieves array object of the objetc genre_ids that are in results
     internal init(id: Int, name: String) {
         self.id = id
         self.name = name

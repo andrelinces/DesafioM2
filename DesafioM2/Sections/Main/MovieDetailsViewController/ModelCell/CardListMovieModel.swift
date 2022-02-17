@@ -7,6 +7,7 @@
 
 import UIKit
 
+//protocol for atribut the click of the card and selected tag similiar movies.
 protocol CardListMovieModelCallBack: class {
     func actionClickCardView (indexPath: IndexPath)
     func actionClickCheckMovie(tagCheckMovie : Bool)
@@ -30,7 +31,7 @@ class CardListMovieModel: tableViewCompatible {
         return "CardListMovieModelCellIdentifier"
     }
     
-    //variáveis de inicialização
+    //Variables from inicialization.
     var imageMovieList: String
     var listTitleMovie: String
     var listYear: String
@@ -41,13 +42,11 @@ class CardListMovieModel: tableViewCompatible {
     func cellForTableView(tableView: UITableView, atIndexpath indexpath: IndexPath) -> UITableViewCell {
         
        if let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexpath) as? CardListMovieModelCell {
-            
-            //cell.setupDesign()
-           
+      
             cell.setupValues(imageMovieList: imageMovieList, listTitleMovie: listTitleMovie, listYear: listYear, listGenre: listGenre)
             cell.setupCheck(tagCheckMovie: tagCheckMovie)
            
-           //Adding clicks in card1view...
+           //Adding clicks in cardView...
            let gestureCliqueCard = myTapCustom(target: self, action: #selector(actionClickCardView))
            gestureCliqueCard.indexPath = indexpath
            
@@ -67,7 +66,7 @@ class CardListMovieModel: tableViewCompatible {
         }
         
     }
-    
+    //Retrieves the clicks of the card and as tags selected.
     @objc func actionClickCardView (sender: myTapCustom) {
 
         delegate?.actionClickCardView(indexPath: sender.indexPath!)
