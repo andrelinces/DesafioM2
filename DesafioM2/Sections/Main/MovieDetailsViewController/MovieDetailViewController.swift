@@ -113,8 +113,7 @@ class MovieDetailViewController: UIViewController, CardDetailsModelCallBack, Car
     
     func recoverApi(){
         let baseUrl = URL(string: "https://image.tmdb.org/t/p/w400")
-        //var urlFull = https://image.tmdb.org/t/p/w200/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg
-        //Retrieves data JSON using alamofire api for to add objects.
+    
         
         //MARK: func retrieves movie Image
         AF.request(urlImageMovie).responseJSON { response in

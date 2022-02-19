@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import Kingfisher
+
 
 class CardMovieImageModel: tableViewCompatible {
     internal init (navigationController : UINavigationController?, imageMovie: String){
