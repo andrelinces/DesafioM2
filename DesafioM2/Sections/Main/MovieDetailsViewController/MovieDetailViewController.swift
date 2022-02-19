@@ -121,14 +121,11 @@ class MovieDetailViewController: UIViewController, CardDetailsModelCallBack, Car
 
                 let movieDetailsApi =  MovieDetailViewController.getModelApi(modelApi_list: json)
 
-
                 var urlFull =  ("https://image.tmdb.org/t/p/w500" + movieDetailsApi.poster_path)
 
                 let cellMovieImage = CardMovieImageModel(navigationController : self.navigationController, imageMovie: urlFull)
 
                 self.dataSource.data.append(cellMovieImage)
-
-                print("test movieDetailsApi.. \(movieDetailsApi.poster_path)")
 
                 self.reloadInputViews()
             }
@@ -139,15 +136,9 @@ class MovieDetailViewController: UIViewController, CardDetailsModelCallBack, Car
             if let json = response.data {
                 
                 let modelApi =  MovieDetailViewController.getModelApi(modelApi_list: json)
-                
-                print("originalTitle : \(modelApi.popularity)")
-//                let voteCount = MovieDetailViewController.getModelApi(modelApi_list: json)
-//
-//                let popularity = MovieDetailViewController.getModelApi(modelApi_list: json)
-                
+      
                 self.dataSource.titleMovie = modelApi.original_title
-//
-//                let movieTitle = originalTitle.original_title
+
                 var likesMovie = modelApi.vote_count
                 if likesMovie >= 1000{
                     likesMovie = likesMovie * 1/1000
@@ -155,18 +146,11 @@ class MovieDetailViewController: UIViewController, CardDetailsModelCallBack, Car
                     likesMovie = likesMovie * 1
                 }
                 var popularityMovie = modelApi.popularity
-//                popularityMovie = popularityMovie * 10
-//
-//                //let imageHeart = UIImage.init(systemName: "heart" )
-//
+            
                 let cellMovieTitle = CardDetailsModel(delegate: self, movieDetails: modelApi.original_title, tagFilmeFavorito: self.tagFilmeFavorito, likes: likesMovie, popularity: popularityMovie)
 //
                 self.dataSource.data.append(cellMovieTitle)
                 
-                //var urlFull = URL(string: \(baseUrl) + movieDetailsApi.poster_path)
-    
-//                print("testUrlfull... \(originalTitle.original_title)")
-              
                 self.tableView.reloadData()
             }
             self.tableView.reloadData()
@@ -179,64 +163,30 @@ class MovieDetailViewController: UIViewController, CardDetailsModelCallBack, Car
                 print("Json response teste: \(json)")
 
                 let modelResults = MovieDetailViewController.getModelListApi(modelListApi_list: json)
-
-//                let testResults = MovieDetailViewController.getModelListApi(modelListApi_list: json)
-
-                print("test page... \(modelResults.page)")
-                print("test results \(modelResults.results[0].title)")
-                
-                
                 
                 for listResults in modelResults.results {
                    
                     var urlListImageFull =  ("https://image.tmdb.org/t/p/w500" + listResults.poster_path)
                     
-                    
-                    var formatDate = listResults.release_date
-                   
-                    
-//                    let startDate = formatDate
-//                    let dateFormatter = DateFormatter()
-//                    dateFormatter.dateFormat = "MM-dd-yyyy HH:mm:ss"
-//                    let dateFromStringstartDate :
-//                    NSDate = dateFormatter.date(from: startDate) as! NSDate
-//                    dateFormatter.dateFormat = "MM/dd/yyyy HH:mm:ss"
-//                    let strstartDate = dateFormatter.string(from: dateFromStringstartDate as Date)
-                    //print("test funcao data...  \(startDate)" )
-               
-                    print("test listResults... \(listResults.genre_ids)")
-                    
-                    //Conver from [int] for [string]
+                    //Format string in Int
                     var arr: [Int] = listResults.genre_ids
-
                     var stringArray = arr.map { String($0) }
                     
-                    
-                    
-                    print("test listGenre... \(listResults.genre_ids.count)")
-                    
-//                    var stringArray = arr.map {
-//                      (number: Int) -> String in
-//                      return String(number)
-//                    }
-                    
-                    var generoFilme = ""
+                    var movieGenre = ""
                     var countListMovieId = 0
-                    for idGenero in listResults.genre_ids {
+                    for idGenre in listResults.genre_ids {
                         //Verifica se devemos adicionar a ultima virgula
                         if countListMovieId == listResults.genre_ids.count - 1 {
-                            generoFilme += GlobalMethods.getGenero(idGenero: idGenero)
+                            movieGenre += GlobalMethods.getGenero(idGenero: idGenre)
                             countListMovieId += 1
                         }else {
-                            generoFilme += GlobalMethods.getGenero(idGenero: idGenero) + ", "
+                            movieGenre += GlobalMethods.getGenero(idGenero: idGenre) + ", "
                             countListMovieId += 1
                         }
                         
                     }
                     
-                
-                    let cellListMovie = CardListMovieModel(delegate: self,  imageMovieList: urlListImageFull , listTitleMovie: listResults.title, listYear: GlobalMethods.getDataYearFromString(dateString: listResults.release_date), listGenre: generoFilme, tagCheckMovie: self.tagCheckMovie )
-                    
+                    let cellListMovie = CardListMovieModel(delegate: self,  imageMovieList: urlListImageFull , listTitleMovie: listResults.title, listYear: GlobalMethods.getDataYearFromString(dateString: listResults.release_date), listGenre: movieGenre, tagCheckMovie: self.tagCheckMovie )
                     
                     self.dataSource.data.append(cellListMovie)
                     
