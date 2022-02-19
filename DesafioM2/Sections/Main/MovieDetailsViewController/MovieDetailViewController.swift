@@ -27,7 +27,7 @@ class MovieDetailViewController: UIViewController, CardDetailsModelCallBack, Car
     }
     //Func for to selected tag of the list similar movies.
     func actionClickCheckMovie(tagCheckMovie: Bool) {
-        print("click in screen... \(tagCheckMovie)")
+        
         if tagCheckMovie {
             self.tagCheckMovie = false
         }else {
@@ -91,19 +91,15 @@ class MovieDetailViewController: UIViewController, CardDetailsModelCallBack, Car
     }
 
     func setupTableView () {
-        print("Into function setupTable...")
-
+        
         dataSource.data.removeAll()
         dataSource.navigationController = self.navigationController
    
         recoverApi()
 
         dataSource.initializeTableView(tableView: tableView)
-
         tableView.allowsSelection = false
-
         tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
-        
         tableView.reloadData()
 
     }

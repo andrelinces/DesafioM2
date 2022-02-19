@@ -21,9 +21,6 @@ class MovieDetailDataSource: NSObject {
         navigationController?.setNavigationBarHidden(false, animated: true)
         navigationController?.navigationBar.alpha = 0
         navigationController?.navigationBar.backItem?.title = "Voltar"
-        navigationController?.navigationBar.tintColor = .black
-        
-        print("title : \(titleMovie)")
         
         //Registing the cells
         tableView.register(UINib(nibName: "CardDetailsModelCell", bundle: Bundle.main), forCellReuseIdentifier: "CardDetailsModelCellIdentifier")
@@ -60,20 +57,21 @@ extension MovieDetailDataSource: UITableViewDataSource, UITableViewDelegate {
     
     //funciton for scrollview when the user scroll the list, show navigation bar
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        print("Scroll contentOffset: \(scrollView.contentOffset.y)")
+        //Print for tests and to display the position of the scroll, the initial position is -44
+        //print("Scroll contentOffset: \(scrollView.contentOffset.y)")
         
         if navigationController != nil {
-            if scrollView.contentOffset.y > 30 {
+            if scrollView.contentOffset.y > 30 {//MARK: Displays navigation bar when the down scroll.
                 
                 navigationController?.navigationBar.alpha = scrollView.contentOffset.y / 180
-                
+                navigationController?.navigationBar.tintColor = .darkGray
+                navigationController?.navigationBar.backgroundColor = .red
             }else{
                 navigationController?.navigationBar.alpha = 0
                 
             }
             
-            
-            if scrollView.contentOffset.y > 304 {
+            if scrollView.contentOffset.y > 304 {//MARK: When the navigation bar to hide title of the movie, It's diplay title from movie in the navigation bar.
                 navigationController?.navigationBar.topItem?.title = titleMovie
             }else {
                 navigationController?.navigationBar.topItem?.title = ""
