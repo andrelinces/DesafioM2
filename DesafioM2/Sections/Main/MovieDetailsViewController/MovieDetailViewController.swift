@@ -89,6 +89,17 @@ class MovieDetailViewController: UIViewController, CardDetailsModelCallBack, Car
 
        return parsedData
     }
+    //MARK: Func for to retrieves from API genres.
+    static func getModelGenreListApi(modelGenres_list: Data) -> ModelListGenres {
+
+        //Parsing the data
+
+        let decoder = JSONDecoder()
+        let parsedData = try! decoder.decode(ModelListGenres.self, from: modelGenres_list )
+
+       return parsedData
+    }
+
 
     func setupTableView () {
         
@@ -161,41 +172,52 @@ class MovieDetailViewController: UIViewController, CardDetailsModelCallBack, Car
                 let modelResults = MovieDetailViewController.getModelListApi(modelListApi_list: json)
                 
                 for listResults in modelResults.results {
-                   
+                    
                     var urlListImageFull =  ("https://image.tmdb.org/t/p/w500" + listResults.poster_path)
                     
-                    //Format string in Int
-                    var arr: [Int] = listResults.genre_ids
-                    var stringArray = arr.map { String($0) }
-                    
-                    var movieGenre = ""
-                    var countListMovieId = 0
-                    for idGenre in listResults.genre_ids {
-                        //Verifica se devemos adicionar a ultima virgula
-                        if countListMovieId == listResults.genre_ids.count - 1 {
-                            movieGenre += GlobalMethods.getGenero(idGenero: idGenre)
-                            countListMovieId += 1
-                        }else {
-                            movieGenre += GlobalMethods.getGenero(idGenero: idGenre) + ", "
-                            countListMovieId += 1
-                        }
-                        
-                    }
-                    
-                    let cellListMovie = CardListMovieModel(delegate: self,  imageMovieList: urlListImageFull , listTitleMovie: listResults.title, listYear: GlobalMethods.getDataYearFromString(dateString: listResults.release_date), listGenre: movieGenre, tagCheckMovie: self.tagCheckMovie )
+                    //Function recover List JSON, g​enresMovies​.
+                    AF.request("https://api.themoviedb.org/3/genre/movie/list?api_key=8f04577aff690de3a89bef5e5f666fe5&language=en-US").responseJSON { response in
+                        if let json = response.data {
+                            
+                            var movieGenreTest = ""
+                            var countListMovieIdTest = 0
+                     
+                            let modelGenres = MovieDetailViewController.getModelGenreListApi(modelGenres_list: json)
+                     
+                            for genreIdMovie in modelGenres.genres {
+                                
+                                //MARK: Test for to compare list of the ids from movie with list ids of the existent genres.
+                                if listResults.genre_ids.contains(genreIdMovie.id) {
+                                    
+                                    //MARK: Test to see how many genres the movie has..
+                                    if countListMovieIdTest ==  listResults.genre_ids.count - 1 {
+                                        
+                                        movieGenreTest +=  genreIdMovie.name
+                                        countListMovieIdTest += 1
+                                      
+                                    }else{
+                                        movieGenreTest += genreIdMovie.name + ", "
+                                        countListMovieIdTest += 1
+                                    }
+                                }
+                                 
+                            }
+         
+                    let cellListMovie = CardListMovieModel(delegate: self,  imageMovieList: urlListImageFull , listTitleMovie: listResults.title, listYear: GlobalMethods.getDataYearFromString(dateString: listResults.release_date), listGenre: movieGenreTest, tagCheckMovie: self.tagCheckMovie )
                     
                     self.dataSource.data.append(cellListMovie)
                     
                     self.tableView.reloadData()
                 }
-
+                    }//the End alamofire retrieves genres names
+                }//the End alamofire retrieves genres names
                 self.tableView.reloadData()
             }
             self.tableView.reloadData()
         }
+        
     }
-
-    
+       
 }
 
     
